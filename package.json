@@ -1,6 +1,6 @@
 {
   "name": "mspecs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fully-typed, generated api wrapper for mspecs based on the official documentation.",
   "main": "dist/index",
   "typings": "dist/index",

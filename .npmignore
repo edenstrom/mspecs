@@ -3,3 +3,4 @@ types
 schemas.json
 downloadTypes.js
 index.js
+!dist/index.js
