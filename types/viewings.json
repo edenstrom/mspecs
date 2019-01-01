@@ -1,0 +1,93 @@
+{
+  "name": "viewings",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "isNoSpecifiedTime",
+      "type": "bit"
+    },
+    {
+      "name": "startDate",
+      "type": "datetime"
+    },
+    {
+      "name": "endDate",
+      "type": "datetime"
+    },
+    {
+      "name": "hostContactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "viaInternet",
+      "type": "bit"
+    },
+    {
+      "name": "viaSms",
+      "type": "bit"
+    },
+    {
+      "name": "viaMarketingDocuments",
+      "type": "bit"
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "note": "Public text"
+    },
+    {
+      "name": "comment",
+      "type": "text",
+      "note": "Private text"
+    },
+    {
+      "name": "isInactive",
+      "type": "bit"
+    },
+    {
+      "name": "contactBrokerForViewing",
+      "type": "bit"
+    },
+    {
+      "name": "displayOnlyViewingDescription",
+      "type": "bit",
+      "note": "If checked, show only the description of the viewing on marketing places."
+    },
+    {
+      "name": "allowExternalBooking",
+      "type": "bit",
+      "note": "If this viewing is bookable from other sources, like broker webpage"
+    },
+    {
+      "name": "externalBookingTriggerAction",
+      "type": "enum",
+      "enums": [
+        "ENUM_VIEWING_EXTERNAL_BOOKING_TRIGGER_ACTION_SEND_SMS",
+        "ENUM_VIEWING_EXTERNAL_BOOKING_TRIGGER_ACTION_SEND_EMAIL"
+      ]
+    },
+    {
+      "name": "externalBookingTriggerRecipientContactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "viewingBuyers",
+    "viewingEvents"
+  ]
+}

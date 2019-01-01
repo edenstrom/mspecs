@@ -1,0 +1,70 @@
+{
+  "name": "buyers",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "buyerGroupId",
+      "type": "foreignKey",
+      "table": "buyerGroups",
+      "mandatory": true
+    },
+    {
+      "name": "share",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "hasMortgageCommitment",
+      "type": "bit"
+    },
+    {
+      "name": "mortgageCommitmentComment",
+      "type": "text"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "buyerInterestInformationId",
+      "type": "foreignKey",
+      "table": "buyerInterestInformation"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "interestedStatus",
+      "type": "enum",
+      "enums": [
+        "ENUM_BUYER_INTERESTED_STATUS_INTERESTED",
+        "ENUM_BUYER_INTERESTED_STATUS_NOT_INTERESTED"
+      ]
+    },
+    {
+      "name": "ownsProperty",
+      "type": "enum",
+      "enums": [
+        "ENUM_BUYER_OWNS_PROPERTY_YES",
+        "ENUM_BUYER_OWNS_PROPERTY_NO"
+      ]
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "signees"
+  ]
+}

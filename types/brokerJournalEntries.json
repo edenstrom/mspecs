@@ -1,0 +1,55 @@
+{
+  "name": "brokerJournalEntries",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "eventDate",
+      "type": "datetime",
+      "default": "CURRENT_TIMESTAMP",
+      "mandatory": true
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "isDone",
+      "type": "bit"
+    },
+    {
+      "name": "brokerJournalEventTypeId",
+      "type": "foreignKey",
+      "table": "brokerJournalEventTypes",
+      "mandatory": true,
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

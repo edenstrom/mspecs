@@ -1,0 +1,27 @@
+{
+  "name": "rowContainerRows",
+  "isConnectionTable": false,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "rowContainerId",
+      "type": "foreignKey",
+      "table": "rowContainers",
+      "mandatory": true
+    },
+    {
+      "name": "rowId",
+      "type": "foreignKey",
+      "table": "rows",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

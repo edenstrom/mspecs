@@ -1,0 +1,74 @@
+{
+  "name": "bids",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "biddingId",
+      "type": "foreignKey",
+      "table": "biddings",
+      "mandatory": true
+    },
+    {
+      "name": "bidderId",
+      "type": "foreignKey",
+      "table": "bidders",
+      "mandatory": true
+    },
+    {
+      "name": "incomingSmsId",
+      "type": "foreignKey",
+      "table": "incomingSms"
+    },
+    {
+      "name": "bidAmount",
+      "type": "money"
+    },
+    {
+      "name": "bidDate",
+      "type": "datetime",
+      "mandatory": true,
+      "default": "CURRENT_TIMESTAMP"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "isAutomaticBid",
+      "type": "bit"
+    },
+    {
+      "name": "isPrivate",
+      "type": "bit"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "enum",
+      "enums": [
+        "ENUMS_BID_STATUS_ACTIVE",
+        "ENUMS_BID_STATUS_QUARANTINE",
+        "ENUMS_BID_STATUS_REVOKED",
+        "ENUMS_BID_STATUS_NOT_VALID"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

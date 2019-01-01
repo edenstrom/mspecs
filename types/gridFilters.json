@@ -1,0 +1,49 @@
+{
+  "name": "gridFilters",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100,
+      "mandatory": true
+    },
+    {
+      "name": "type",
+      "type": "enum",
+      "enums": [
+        "ENUM_GRID_FILTERS_CONTACTS",
+        "ENUM_GRID_FILTERS_EXTERNAL_CONTACTS",
+        "ENUM_GRID_FILTERS_DEALS",
+        "ENUM_GRID_FILTERS_ASSISTANT_DEALS",
+        "ENUM_GRID_FILTERS_HOUSING_ASSOCIATIONS",
+        "ENUM_GRID_FILTERS_VIEWINGS"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "jsonData",
+      "type": "jsonObject",
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

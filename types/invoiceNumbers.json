@@ -1,0 +1,30 @@
+{
+  "name": "invoiceNumbers",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "number",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "invoiceId",
+      "type": "foreignKey",
+      "table": "invoices",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

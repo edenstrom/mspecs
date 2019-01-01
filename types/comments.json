@@ -1,0 +1,44 @@
+{
+  "name": "comments",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "subject",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "comment",
+      "type": "text",
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "commentDate",
+      "type": "datetime",
+      "default": "CURRENT_TIMESTAMP",
+      "mandatory": true
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "isRead",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,60 @@
+{
+  "name": "teamRoles",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "role",
+      "type": "enum",
+      "enums": [
+        "ENUMS_TEAMROLES_TYPE_DISPLAY_HOST",
+        "ENUMS_TEAMROLES_TYPE_BROKER",
+        "ENUMS_TEAMROLES_TYPE_ASSISTANT",
+        "ENUMS_TEAMROLES_TYPE_CONTACT_PERSON",
+        "ENUMS_TEAMROLES_TYPE_FOREST_MANAGER",
+        "ENUMS_TEAMROLES_TYPE_FOREST_TECHNICIAN",
+        "ENUMS_TEAMROLES_TYPE_ACTING_TRUSTEE",
+        "ENUMS_TEAMROLES_TYPE_FORESTER",
+        "ENUMS_TEAMROLES_TYPE_FOREST_ECONOMIST",
+        "ENUMS_TEAMROLES_TYPE_SELLER",
+        "ENUMS_TEAMROLES_TYPE_AGRONOMIST",
+        "ENUMS_TEAMROLES_TYPE_RENTER"
+      ]
+    },
+    {
+      "name": "sendBiddingInformationBySMS",
+      "type": "bit"
+    },
+    {
+      "name": "sendBiddingInformationByEmail",
+      "type": "bit"
+    },
+    {
+      "name": "workTitle",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "isPublic",
+      "type": "bit",
+      "note": "If broker should be visible on prints and object description. Main broker is always public, one more broker can be public. API will make sure only one is public at one time"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

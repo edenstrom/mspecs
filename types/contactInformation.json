@@ -1,0 +1,69 @@
+{
+  "name": "contactInformation",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_CONTACTTYPE_TELEPHONE",
+        "ENUMS_CONTACTTYPE_HOMEPAGE",
+        "ENUMS_CONTACTTYPE_EMAIL",
+        "ENUMS_CONTACTTYPE_ADDRESS",
+        "ENUMS_CONTACTTYPE_FAX"
+      ]
+    },
+    {
+      "name": "contactSubType",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "streetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "postalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "phoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "isSmsNumber",
+      "type": "bit"
+    },
+    {
+      "name": "websiteUrl",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "faxNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

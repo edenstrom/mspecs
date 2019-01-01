@@ -1,0 +1,83 @@
+{
+  "name": "commissions",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "minimumCommissionFee",
+      "type": "money"
+    },
+    {
+      "name": "maximumCommissionFee",
+      "type": "money"
+    },
+    {
+      "name": "estimatedPaymentDate",
+      "type": "date"
+    },
+    {
+      "name": "discountPercentage",
+      "type": "percentage"
+    },
+    {
+      "name": "discountAmount",
+      "type": "money"
+    },
+    {
+      "name": "isDiscountInPercentage",
+      "type": "bit"
+    },
+    {
+      "name": "isIncludeInSettlement",
+      "type": "bit"
+    },
+    {
+      "name": "commissionSum",
+      "type": "money"
+    },
+    {
+      "name": "commissionBaseFee",
+      "type": "money"
+    },
+    {
+      "name": "commissionType",
+      "type": "enum",
+      "enums": [
+        "ENUM_COMMISSION_TYPE_FIXED_PRICE",
+        "ENUM_COMMISSION_TYPE_PERCENTAGE",
+        "ENUM_COMMISSION_TYPE_MIXED"
+      ]
+    },
+    {
+      "name": "showBrokerAccountInSettlement",
+      "type": "bit"
+    },
+    {
+      "name": "showDealTokenInSettlement",
+      "type": "bit",
+      "note": "Depends on, showBrokerAccountInSettlement and isIncludeInSettlement"
+    },
+    {
+      "name": "companyCutPercentage",
+      "type": "percentage"
+    },
+    {
+      "name": "showCutInReports",
+      "type": "bit"
+    },
+    {
+      "name": "isSoldWithoutVAT",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "commissionIntervals",
+    "commissionCuts"
+  ]
+}

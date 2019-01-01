@@ -1,0 +1,37 @@
+{
+  "name": "staff",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits",
+      "mandatory": true
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "isAdminOnUnit",
+      "type": "bit",
+      "note": "Only used for ACCESS_RIGHT_ORGANIZATION_UNIT_ADMIN. Need to have ACCESS_RIGHT_ORGANIZATION_UNIT_ADMIN to be admin on an orgUnit. Protected bit, only set by ACCESS_RIGHT_ADMIN and ACCESS_RIGHT_API"
+    },
+    {
+      "name": "isDebtUnit",
+      "type": "bit",
+      "note": "If set to true, this unit will be invoiced for the user. If none is set to true, we will invoice the first orgUnit we can find that the user belongs to. Only one unit can be debtUnit for each userAccountId"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

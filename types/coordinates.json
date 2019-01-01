@@ -1,0 +1,29 @@
+{
+  "name": "coordinates",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "latitude",
+      "type": "text",
+      "maxLength": 22
+    },
+    {
+      "name": "longitude",
+      "type": "text",
+      "maxLength": 22
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

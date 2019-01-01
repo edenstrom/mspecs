@@ -1,0 +1,35 @@
+{
+  "name": "commercialOtherIncomes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates",
+      "mandatory": true
+    },
+    {
+      "name": "amountId",
+      "type": "foreignKey",
+      "table": "amounts",
+      "mandatory": true
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "type",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

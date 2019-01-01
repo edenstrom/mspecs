@@ -1,0 +1,27 @@
+{
+  "name": "viewingBuyers",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "viewingId",
+      "type": "foreignKey",
+      "table": "viewings",
+      "mandatory": true
+    },
+    {
+      "name": "buyerId",
+      "type": "foreignKey",
+      "table": "buyers",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

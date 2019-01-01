@@ -1,0 +1,38 @@
+{
+  "name": "quarantineFiles",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "quarantineId",
+      "type": "foreignKey",
+      "table": "quarantine",
+      "mandatory": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 200,
+      "mandatory": true
+    },
+    {
+      "name": "data",
+      "type": "mediumblob"
+    },
+    {
+      "name": "expirationDate",
+      "type": "date"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,521 @@
+{
+  "name": "marketValuations",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "officerRole",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_AUTH_ESTATE_APPRAISER",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_AUTH_FARMING_APPRAISER",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_AUTH_ESTATE_AND_TENANT_OWNERSHIP_APPRAISER",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_BROKER",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_FORESTER",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_FOREST_MANAGER",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_FOREST_TECHNICIAN",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_AGRONOMY",
+        "ENUM_MARKET_VALUATION_OFFIDER_ROLE_FOREST_ECONOMICS"
+      ],
+      "note": "Will be pre populated with the role from teamRoles."
+    },
+    {
+      "name": "printHeadline",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates",
+      "mandatory": true
+    },
+    {
+      "name": "imageFileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "officerContactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "propertyName",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "streetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "postalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "objectSubTypeId",
+      "type": "foreignKey",
+      "table": "objectSubTypes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "objectSubTypeText",
+      "type": "text",
+      "maxLength": 100,
+      "note": "When objectSubTypeId is set to OBJECTSUBTYPES_OTHER, we allow the user to write their own sub type in this field."
+    },
+    {
+      "name": "livingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1
+    },
+    {
+      "name": "otherLivingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1
+    },
+    {
+      "name": "livingAreaComment",
+      "type": "text",
+      "maxLength": 150,
+      "enums": [
+        "ENUMS_LIVINGAREACOMMENT_TYPE_NOTE_THAT_THE_EXACT_SIZE_IS_NOT_MEASURED",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_TAX_INFORMATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_OF_THE_SELLER",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_SELLER_AND_HOUSING_ASSOCIATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_DRAWING_(S)",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_MEASURING",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_LANDLORD",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_CONDOMINIUM_ASSOCIATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_OF_OWNERS_OF",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_NO_MEASURING",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_LANTMATERIET"
+      ]
+    },
+    {
+      "name": "numberOfBedrooms",
+      "type": "int",
+      "maxLength": 3
+    },
+    {
+      "name": "numberOfRooms",
+      "type": "decimal",
+      "digits": 4,
+      "decimals": 1
+    },
+    {
+      "name": "assessValueYear",
+      "type": "year"
+    },
+    {
+      "name": "assessValueBuilding",
+      "type": "money"
+    },
+    {
+      "name": "assessValueLand",
+      "type": "money"
+    },
+    {
+      "name": "assessValueTotal",
+      "type": "money"
+    },
+    {
+      "name": "assessmentYear",
+      "type": "year"
+    },
+    {
+      "name": "assessmentValueAccuracy",
+      "type": "enum",
+      "enums": [
+        "ENUMS_ASSESSMENTVALUEACCURACY_TYPE_APPRECIATED",
+        "ENUMS_ASSESSMENTVALUEACCURACY_TYPE_PRELIMINARY",
+        "ENUMS_ASSESSMENTVALUEACCURACY_TYPE_PROPOSED",
+        "ENUMS_ASSESSMENTVALUEACCURACY_TYPE_DETERMINED",
+        "ENUMS_ASSESSMENTVALUEACCURACY_TYPE_NOT_DETERMINED",
+        "ENUMS_ASSESSMENTVALUEACCURACY_TYPE_CALCULATED"
+      ]
+    },
+    {
+      "name": "personsInHousehold",
+      "type": "int"
+    },
+    {
+      "name": "plotAreaComment",
+      "type": "text",
+      "maxLength": 150,
+      "enums": [
+        "ENUMS_LIVINGAREACOMMENT_TYPE_NOTE_THAT_THE_EXACT_SIZE_IS_NOT_MEASURED",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_TAX_INFORMATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_OF_THE_SELLER",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_SELLER_AND_HOUSING_ASSOCIATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_DRAWING_(S)",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_MEASURING",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_LANDLORD",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_CONDOMINIUM_ASSOCIATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_OF_OWNERS_OF",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_NO_MEASURING",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_LANTMATERIET"
+      ]
+    },
+    {
+      "name": "buildingArea",
+      "type": "decimal",
+      "digits": 7,
+      "decimals": 1
+    },
+    {
+      "name": "plotArea",
+      "type": "decimal",
+      "digits": 15,
+      "decimals": 1
+    },
+    {
+      "name": "buildYear",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "renovateYear",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "waterType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_WATERTYPE_TYPE_WATER_MISSING",
+        "ENUMS_WATERTYPE_TYPE_MUNICIPAL_WATER",
+        "ENUMS_WATERTYPE_TYPE_DUG_WELLS",
+        "ENUMS_WATERTYPE_TYPE_INDIVIDUAL_WATER",
+        "ENUMS_WATERTYPE_TYPE_DEEP_DRILLED_WELL"
+      ]
+    },
+    {
+      "name": "drainType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_DRAINTYPE_TYPE_SANITATION",
+        "ENUMS_DRAINTYPE_TYPE_INDIVIDUAL_SEWAGE",
+        "ENUMS_DRAINTYPE_TYPE_DRAIN_WITH_INFILTRATION",
+        "ENUMS_DRAINTYPE_TYPE_DRAIN_MISSING"
+      ]
+    },
+    {
+      "name": "heatingType",
+      "type": "text",
+      "enums": [
+        "ENUMS_HEATINGTYPE_TYPE_COMBI_BOILER_WITH_WOOD_OR_ELECTRICITY",
+        "ENUMS_HEATINGTYPE_TYPE_COMBI_BOILER_WITH_OIL_OR_ELECTRICITY",
+        "ENUMS_HEATINGTYPE_TYPE_COMBI_BOILER_WITH_OIL_ELECTRICITY_OR_WOOD",
+        "ENUMS_HEATINGTYPE_TYPE_CERAMIC_TILE_FOR_WOOD",
+        "ENUMS_HEATINGTYPE_TYPE_GAS",
+        "ENUMS_HEATINGTYPE_TYPE_GAS_BOILER",
+        "ENUMS_HEATINGTYPE_TYPE_DISTRICT_HEATING",
+        "ENUMS_HEATINGTYPE_TYPE_ELECTRICITY-WATER_HEAT",
+        "ENUMS_HEATINGTYPE_TYPE_EL-AIR_HEATING",
+        "ENUMS_HEATINGTYPE_TYPE_DIRECT_ELECTRIC",
+        "ENUMS_HEATINGTYPE_TYPE_HEAT_PUMP",
+        "ENUMS_HEATINGTYPE_TYPE_FIREWOOD",
+        "ENUMS_HEATINGTYPE_TYPE_OIL-FILLED_ELECTRIC_RADIATORS",
+        "ENUMS_HEATINGTYPE_TYPE_OIL",
+        "ENUMS_HEATINGTYPE_TYPE_PELLET",
+        "ENUMS_HEATINGTYPE_TYPE_WOODBURNER",
+        "ENUMS_HEATINGTYPE_TYPE_HEATPUMP_AIR_TO_AIR",
+        "ENUMS_HEATINGTYPE_TYPE_HEATPUMP_AIR_TO_WATER",
+        "ENUMS_HEATINGTYPE_TYPE_GEOTHERMAL"
+      ],
+      "maxLength": 150
+    },
+    {
+      "name": "operatingCostSum",
+      "type": "money"
+    },
+    {
+      "name": "estateDescription",
+      "type": "text"
+    },
+    {
+      "name": "marketValueDependentInformation",
+      "type": "text"
+    },
+    {
+      "name": "propertyCondition",
+      "type": "enum",
+      "enums": [
+        "ENUMS_MARKET_VALUATION_RATING_VERY_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_NORMAL",
+        "ENUMS_MARKET_VALUATION_RATING_LESS_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_BAD"
+      ]
+    },
+    {
+      "name": "demandForResort",
+      "type": "enum",
+      "enums": [
+        "ENUMS_MARKET_VALUATION_RATING_VERY_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_NORMAL",
+        "ENUMS_MARKET_VALUATION_RATING_LESS_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_BAD"
+      ]
+    },
+    {
+      "name": "resortsGeneralDevelopment",
+      "type": "enum",
+      "enums": [
+        "ENUMS_MARKET_VALUATION_RATING_VERY_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_NORMAL",
+        "ENUMS_MARKET_VALUATION_RATING_LESS_GOOD",
+        "ENUMS_MARKET_VALUATION_RATING_BAD"
+      ]
+    },
+    {
+      "name": "customerDescription",
+      "type": "text"
+    },
+    {
+      "name": "marketValue",
+      "type": "money"
+    },
+    {
+      "name": "marketValueInText",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "marketValueSpread",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "generalInformation",
+      "type": "text"
+    },
+    {
+      "name": "buildingDescription",
+      "type": "text"
+    },
+    {
+      "name": "valuationDate",
+      "type": "date"
+    },
+    {
+      "name": "signatureDate",
+      "type": "date"
+    },
+    {
+      "name": "isLeasehold",
+      "type": "bit"
+    },
+    {
+      "name": "isPartOf",
+      "type": "bit"
+    },
+    {
+      "name": "isTenureHouse",
+      "type": "bit"
+    },
+    {
+      "name": "isSharedOwnership",
+      "type": "bit"
+    },
+    {
+      "name": "acreageDescription",
+      "type": "text"
+    },
+    {
+      "name": "monthlyRent",
+      "type": "money"
+    },
+    {
+      "name": "shareInCondo",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUM_ESTATE_SHARE_IN_CONDO_NOT_POSSIBLE_TO_OBTAIN",
+        "ENUM_ESTATE_SHARE_IN_CONDO_MISSING_IN_HA_REGISTER"
+      ]
+    },
+    {
+      "name": "shareInCondoContribution",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUM_ESTATE_SHARE_IN_CONDO_NOT_POSSIBLE_TO_OBTAIN",
+        "ENUM_ESTATE_SHARE_IN_CONDO_MISSING_IN_HA_REGISTER"
+      ]
+    },
+    {
+      "name": "shareInCondoFee",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUM_ESTATE_SHARE_IN_CONDO_NOT_POSSIBLE_TO_OBTAIN",
+        "ENUM_ESTATE_SHARE_IN_CONDO_MISSING_IN_HA_REGISTER"
+      ]
+    },
+    {
+      "name": "repairFund",
+      "type": "money"
+    },
+    {
+      "name": "housingAssociationDescription",
+      "type": "text"
+    },
+    {
+      "name": "yearlyRent",
+      "type": "money"
+    },
+    {
+      "name": "loanInHousingAssociation",
+      "type": "money"
+    },
+    {
+      "name": "loanInHousingAssociationPerAreaUnit",
+      "type": "money",
+      "note": "Area unit for the moment is m²"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "numberOfApartments",
+      "type": "int"
+    },
+    {
+      "name": "apartmentNumber",
+      "type": "text",
+      "maxLength": 30
+    },
+    {
+      "name": "floorNr",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "floorsInTotal",
+      "type": "int",
+      "maxLength": 3
+    },
+    {
+      "name": "printExtendedInformation",
+      "type": "bit"
+    },
+    {
+      "name": "valuationPurposeDescription",
+      "type": "text"
+    },
+    {
+      "name": "preconditionsDescription",
+      "type": "text"
+    },
+    {
+      "name": "descriptionDescription",
+      "type": "text"
+    },
+    {
+      "name": "inspectionDescription",
+      "type": "text"
+    },
+    {
+      "name": "otherSourcesDescription",
+      "type": "text"
+    },
+    {
+      "name": "other",
+      "type": "text"
+    },
+    {
+      "name": "valuationDescription",
+      "type": "text"
+    },
+    {
+      "name": "partValuesDescription",
+      "type": "text"
+    },
+    {
+      "name": "finalValuationDescription",
+      "type": "text"
+    },
+    {
+      "name": "finalValueAssessment",
+      "type": "text"
+    },
+    {
+      "name": "residentialBuildingValue",
+      "type": "money"
+    },
+    {
+      "name": "economyBuildingValue",
+      "type": "money"
+    },
+    {
+      "name": "forestValue",
+      "type": "money"
+    },
+    {
+      "name": "fieldValue",
+      "type": "money"
+    },
+    {
+      "name": "fencedFieldValue",
+      "type": "money"
+    },
+    {
+      "name": "plotValue",
+      "type": "money"
+    },
+    {
+      "name": "mainBuildingValue",
+      "type": "money"
+    },
+    {
+      "name": "impedimentForestValue",
+      "type": "money"
+    },
+    {
+      "name": "pastureValue",
+      "type": "money"
+    },
+    {
+      "name": "estateEconomicTypeCodeId",
+      "type": "foreignKey",
+      "table": "estateEconomicTypeCodes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

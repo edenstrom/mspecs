@@ -1,0 +1,77 @@
+{
+  "name": "biddings",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "communicationTokenId",
+      "type": "foreignKey",
+      "table": "communicationTokens",
+      "mandatory": true,
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "contactSmsNumberId",
+      "type": "foreignKey",
+      "table": "contactSmsNumbers"
+    },
+    {
+      "name": "smsSender",
+      "type": "text",
+      "maxLength": 10
+    },
+    {
+      "name": "endDate",
+      "type": "datetime"
+    },
+    {
+      "name": "currentBid",
+      "type": "foreignKey",
+      "table": "bids",
+      "note": "The bid that is set as the leading bid, it's not always the highest bid!"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "note": "Back reference to the deal that the bidding belongs to."
+    },
+    {
+      "name": "allowWebsiteBids",
+      "type": "bit",
+      "note": "It's possible to place bid from mspecs bidding website"
+    },
+    {
+      "name": "allowSMSBids",
+      "type": "bit",
+      "note": "It's possible to send SMS bids to the system"
+    },
+    {
+      "name": "displayBiddingOnWebsite",
+      "type": "bit",
+      "note": "Website will display that bidding is active"
+    },
+    {
+      "name": "displayBiddingOnMarketingPlaces",
+      "type": "bit",
+      "note": "If deal is published marketingPlaces will be updated and bidding is active will be set"
+    },
+    {
+      "name": "displayBidderStatusOnWebsite",
+      "type": "bit",
+      "note": "Website will display each bidders status"
+    },
+    {
+      "name": "hideBidsOnWebsite",
+      "type": "bit",
+      "note": "If true website will display that bidding is active, but not show any bids"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

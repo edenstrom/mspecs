@@ -1,0 +1,25 @@
+{
+  "name": "tenureTypes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

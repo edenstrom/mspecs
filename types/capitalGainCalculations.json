@@ -1,0 +1,130 @@
+{
+  "name": "capitalGainCalculations",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "kType",
+      "type": "enum",
+      "enums": [
+        "ENUM_CAPITAL_GAIN_CALCULATION_K_TYPE_5",
+        "ENUM_CAPITAL_GAIN_CALCULATION_K_TYPE_7"
+      ]
+    },
+    {
+      "name": "isCalculationIndividual",
+      "type": "bit"
+    },
+    {
+      "name": "saleContractDate",
+      "type": "date"
+    },
+    {
+      "name": "salePrice",
+      "type": "money"
+    },
+    {
+      "name": "saleCommission",
+      "type": "money"
+    },
+    {
+      "name": "saleValuation",
+      "type": "money"
+    },
+    {
+      "name": "saleInspection",
+      "type": "money"
+    },
+    {
+      "name": "saleOtherCosts",
+      "type": "money"
+    },
+    {
+      "name": "saleRepairFundAmount",
+      "type": "money"
+    },
+    {
+      "name": "saleApartmentEquipment",
+      "type": "money"
+    },
+    {
+      "name": "apartmentNumber",
+      "type": "text",
+      "maxLength": 30
+    },
+    {
+      "name": "buyContractDate",
+      "type": "date"
+    },
+    {
+      "name": "buyPrice",
+      "type": "money"
+    },
+    {
+      "name": "buyAssetValue1952",
+      "type": "money"
+    },
+    {
+      "name": "buyLandRegistrationFee",
+      "type": "money"
+    },
+    {
+      "name": "buyMortgageFee",
+      "type": "money"
+    },
+    {
+      "name": "buyInspection",
+      "type": "money"
+    },
+    {
+      "name": "buyOtherCosts",
+      "type": "money"
+    },
+    {
+      "name": "buyPriceSum",
+      "type": "money"
+    },
+    {
+      "name": "buyCostsSum",
+      "type": "money"
+    },
+    {
+      "name": "buyApartmentEquipment",
+      "type": "money"
+    },
+    {
+      "name": "buySpecialCharges",
+      "type": "money"
+    },
+    {
+      "name": "buyCapitalContributions",
+      "type": "money"
+    },
+    {
+      "name": "buyRepairFundAmount",
+      "type": "money"
+    },
+    {
+      "name": "saleCosts",
+      "type": "money"
+    },
+    {
+      "name": "buyCosts",
+      "type": "money"
+    },
+    {
+      "name": "result",
+      "type": "money",
+      "note": "Profit/loss"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "capitalGainCalculationImprovements"
+  ]
+}

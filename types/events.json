@@ -1,0 +1,31 @@
+{
+  "name": "events",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "identifier",
+      "type": "text"
+    },
+    {
+      "name": "externalId",
+      "type": "text"
+    },
+    {
+      "name": "externalService",
+      "type": "enum",
+      "enums": [
+        "Google",
+        "Exchange"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

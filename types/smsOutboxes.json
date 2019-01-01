@@ -1,0 +1,36 @@
+{
+  "name": "smsOutboxes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "senderUserAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "communicationTokenId",
+      "type": "foreignKey",
+      "table": "communicationTokens",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "message",
+      "type": "text"
+    },
+    {
+      "name": "sender",
+      "type": "text",
+      "maxLength": 14,
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

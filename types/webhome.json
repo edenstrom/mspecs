@@ -1,0 +1,56 @@
+{
+  "name": "webhome",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "header",
+      "type": "text",
+      "maxLength": 200,
+      "enums": [
+        "WEBHOME_HEADER_PAGE_ABOUT",
+        "WEBHOME_HEADER_PAGE_SELL",
+        "WEBHOME_HEADER_PAGE_BUY",
+        "WEBHOME_HEADER_COLOR_BODY_BG",
+        "WEBHOME_HEADER_COLOR_NAVBAR_BG",
+        "WEBHOME_HEADER_COLOR_NAVBAR_TEXT",
+        "WEBHOME_HEADER_COLOR_CONTENT_BG",
+        "WEBHOME_HEADER_COLOR_CONTENT_TEXT",
+        "WEBHOME_HEADER_COLOR_SEARCH_BOX_BG",
+        "WEBHOME_HEADER_COLOR_SEARCH_BOX_TEXT",
+        "WEBHOME_HEADER_COLOR_ACCENT",
+        "WEBHOME_HEADER_COLOR_ACTIVE_BUTTON_BG",
+        "WEBHOME_HEADER_COLOR_ACTIVE_BUTTON_TEXT",
+        "WEBHOME_HEADER_COLOR_BUTTON_BG",
+        "WEBHOME_HEADER_COLOR_BUTTON_TEXT",
+        "WEBHOME_HEADER_COLOR_LIST_OBJECTS_BG",
+        "WEBHOME_HEADER_COLOR_HEADING_TEXT",
+        "WEBHOME_HEADER_COLOR_SUBHEADING_TEXT",
+        "WEBHOME_HEADER_COLOR_LINK",
+        "WEBHOME_HEADER_COLOR_LINK_HOVER",
+        "WEBHOME_HEADER_IMAGE_PAGE_ABOUT",
+        "WEBHOME_HEADER_IMAGE_PAGE_SELL",
+        "WEBHOME_HEADER_IMAGE_PAGE_BUY",
+        "WEBHOME_HEADER_PAGE_FOREIGN",
+        "WEBHOME_HEADER_IMAGE_PAGE_FOREIGN",
+        "WEBHOME_HEADER_PAGE_STARTPAGE",
+        "WEBHOME_HEADER_IMAGE_PAGE_STARTPAGE",
+        "WEBHOME_HEADER_LOGO_URL",
+        "WEBHOME_HEADER_TEMPLATE_MENU",
+        "WEBHOME_HEADER_TEMPLATE_LIST",
+        "WEBHOME_HEADER_TEMPLATE_DEALS_SEARCH"
+      ]
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

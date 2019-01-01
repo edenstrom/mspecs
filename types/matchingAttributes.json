@@ -1,0 +1,25 @@
+{
+  "name": "matchingAttributes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 40,
+      "mandatory": true
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,25 @@
+{
+  "name": "dealCostAmounts",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "amountId",
+      "type": "foreignKey",
+      "table": "amounts"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

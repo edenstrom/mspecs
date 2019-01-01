@@ -1,0 +1,34 @@
+{
+  "name": "dealBrokerJournalFlowStepProgress",
+  "note": "If a post exists that connects a deal with a flowStep, that flowStep is considered done in broker journal",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "flowStepId",
+      "type": "foreignKey",
+      "table": "flowSteps",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "uniqueFields": [
+    [
+      "flowStepId",
+      "dealId"
+    ]
+  ],
+  "collections": []
+}

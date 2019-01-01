@@ -1,0 +1,39 @@
+{
+  "name": "notifications",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "senderUserAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "subject",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

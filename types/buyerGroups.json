@@ -1,0 +1,42 @@
+{
+  "name": "buyerGroups",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "displayName",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "bidderAlias",
+      "type": "int"
+    },
+    {
+      "name": "highestBidId",
+      "type": "foreignKey",
+      "table": "bids"
+    },
+    {
+      "name": "mainBuyerId",
+      "type": "foreignKey",
+      "table": "buyers",
+      "note": "The primary buyer the that broker communicates with. If set to null we will use the first buyer"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "buyers"
+  ]
+}

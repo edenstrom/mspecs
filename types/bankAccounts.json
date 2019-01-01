@@ -1,0 +1,41 @@
+{
+  "name": "bankAccounts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "owner",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "bank",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "clearingNumber",
+      "type": "text",
+      "maxLength": 8
+    },
+    {
+      "name": "accountNumber",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "bankAccountRoles"
+  ]
+}

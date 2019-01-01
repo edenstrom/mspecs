@@ -1,0 +1,25 @@
+{
+  "name": "filesInDeals",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

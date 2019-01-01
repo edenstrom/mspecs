@@ -1,0 +1,26 @@
+{
+  "name": "dealDocumentBundles",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "documentBundleId",
+      "type": "foreignKey",
+      "table": "documentBundles",
+      "mandatory": true
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

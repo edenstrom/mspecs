@@ -1,0 +1,27 @@
+{
+  "name": "marketValuationCustomers",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "marketValuationId",
+      "type": "foreignKey",
+      "table": "marketValuations",
+      "mandatory": true
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

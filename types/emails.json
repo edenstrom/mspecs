@@ -1,0 +1,43 @@
+{
+  "name": "emails",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "communicationTokenId",
+      "type": "foreignKey",
+      "table": "communicationTokens",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "subject",
+      "type": "text"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "sentDate",
+      "type": "datetime"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

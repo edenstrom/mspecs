@@ -1,0 +1,49 @@
+{
+  "name": "rooms",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "floor",
+      "type": "text",
+      "maxLength": 50,
+      "enums": [
+        "ENUMS_FLOORS_1",
+        "ENUMS_FLOORS_2",
+        "ENUMS_FLOORS_3",
+        "ENUMS_FLOORS_4",
+        "ENUMS_FLOORS_5",
+        "ENUMS_FLOORS_BASEMENT",
+        "ENUMS_FLOORS_GROUND",
+        "ENUMS_FLOORS_UPSTAIRS",
+        "ENUMS_FLOORS_MAIN_FLOOR",
+        "ENUMS_FLOORS_INCLINE_PLANE"
+      ]
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

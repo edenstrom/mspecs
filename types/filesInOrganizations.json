@@ -1,0 +1,30 @@
+{
+  "name": "filesInOrganizations",
+  "isConnectionTable": true,
+  "isDeprecated": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey",
+      "note": "Dont use this table, will be deleted"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files",
+      "note": "Dont use this table, will be deleted"
+    },
+    {
+      "name": "organizationId",
+      "type": "foreignKey",
+      "table": "organizations",
+      "schema": "mspx_admin",
+      "note": "Dont use this table, will be deleted"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

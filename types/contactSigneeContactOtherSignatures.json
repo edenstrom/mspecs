@@ -1,0 +1,26 @@
+{
+  "name": "contactSigneeContactOtherSignatures",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactSigneeId",
+      "type": "foreignKey",
+      "table": "contactSignees",
+      "mandatory": true
+    },
+    {
+      "name": "contactSignatureId",
+      "type": "foreignKey",
+      "table": "contactSignatures",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

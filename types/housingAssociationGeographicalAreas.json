@@ -1,0 +1,27 @@
+{
+  "name": "housingAssociationGeographicalAreas",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "housingAssociationId",
+      "type": "foreignKey",
+      "table": "housingAssociations",
+      "mandatory": true
+    },
+    {
+      "name": "geographicalAreaId",
+      "type": "foreignKey",
+      "table": "geographicalAreas",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

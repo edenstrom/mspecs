@@ -1,0 +1,27 @@
+{
+  "name": "emailFiles",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files",
+      "mandatory": true
+    },
+    {
+      "name": "emailId",
+      "type": "foreignKey",
+      "table": "emails",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

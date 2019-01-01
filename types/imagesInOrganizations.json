@@ -1,0 +1,26 @@
+{
+  "name": "imagesInOrganizations",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "organizationId",
+      "type": "foreignKey",
+      "table": "organizations",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,24 @@
+{
+  "name": "objectSubTypes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

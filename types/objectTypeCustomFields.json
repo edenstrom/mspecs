@@ -1,0 +1,28 @@
+{
+  "name": "objectTypeCustomFields",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "customFieldId",
+      "type": "foreignKey",
+      "table": "customFields",
+      "mandatory": true
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes",
+      "mandatory": true,
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

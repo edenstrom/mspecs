@@ -1,0 +1,56 @@
+{
+  "name": "formInvitations",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "formId",
+      "type": "foreignKey",
+      "table": "forms",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "message",
+      "type": "text"
+    },
+    {
+      "name": "formStatus",
+      "type": "enum",
+      "enums": [
+        "ENUM_FORM_INVITATIONS_FORM_STATUS_OPEN",
+        "ENUM_FORM_INVITATIONS_FORM_STATUS_SUBMITTED",
+        "ENUM_FORM_INVITATIONS_FORM_STATUS_LOCKED",
+        "ENUM_FORM_INVITATIONS_FORM_STATUS_CLOSED"
+      ]
+    },
+    {
+      "name": "reply",
+      "type": "jsonObject"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

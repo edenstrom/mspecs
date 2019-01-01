@@ -1,0 +1,44 @@
+{
+  "name": "biddingSettings",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "hasInformationChannelSMS",
+      "type": "bit"
+    },
+    {
+      "name": "hasInformationChannelEmail",
+      "type": "bit"
+    },
+    {
+      "name": "isInternetBidder",
+      "type": "bit"
+    },
+    {
+      "name": "showInternetBidAutomaticly",
+      "type": "bit"
+    },
+    {
+      "name": "isSmsBidder",
+      "type": "bit"
+    },
+    {
+      "name": "showSmsBidAutomaticly",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,49 @@
+{
+  "name": "housingAssociationContacts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "housingAssociationId",
+      "type": "foreignKey",
+      "table": "housingAssociations"
+    },
+    {
+      "name": "role",
+      "type": "text",
+      "enums": [
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_CONTACT_PERSON",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_BOARD_MEMBER",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_AUTHORIZED_SIGNATORY",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_PARTNER",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_ACCOUNTANT",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_OWNER",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_MEMBER",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_CHAIRMAN",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_VICE_CHAIRMAN",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_DEPUTY_LANDLORD",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_MANAGER",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_CARETAKER",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_ECONOMIST",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_HR_MANAGER",
+        "ENUMS_HOUSING_ASSOCIATION_CONTACT_ROLE_CASHIER"
+      ]
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,42 @@
+{
+  "name": "newspaperAds",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "subject",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "media",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "advertisingDate",
+      "type": "date"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,48 @@
+{
+  "name": "housingAssociationUrls",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "housingAssociationId",
+      "type": "foreignKey",
+      "table": "housingAssociations",
+      "mandatory": true
+    },
+    {
+      "name": "category",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "isPublished",
+      "type": "bit"
+    },
+    {
+      "name": "displayName",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "url",
+      "type": "text",
+      "maxLength": 200,
+      "mandatory": true
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

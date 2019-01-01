@@ -1,0 +1,49 @@
+{
+  "name": "estateTenantsSubObjectTypes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "estateTenantsObjectTypeId",
+      "type": "foreignKey",
+      "table": "estateTenantsObjectTypes",
+      "mandatory": true
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "isUserDefined",
+      "type": "bit"
+    },
+    {
+      "name": "isInactive",
+      "type": "bit"
+    },
+    {
+      "name": "generalizedCost",
+      "type": "money",
+      "note": "cost/m2"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "uniqueFields": [
+    [
+      "name",
+      "organizationUnitId"
+    ]
+  ],
+  "collections": []
+}

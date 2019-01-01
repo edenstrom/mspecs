@@ -1,0 +1,25 @@
+{
+  "name": "filesInNotifications",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "notificationId",
+      "type": "foreignKey",
+      "table": "notifications"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

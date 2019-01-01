@@ -1,0 +1,28 @@
+{
+  "name": "documentBundleObjectTypes",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "documentBundleId",
+      "type": "foreignKey",
+      "table": "documentBundles",
+      "mandatory": true
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes",
+      "mandatory": true,
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

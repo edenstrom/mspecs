@@ -1,0 +1,46 @@
+{
+  "name": "providers",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "logoURL",
+      "type": "text"
+    },
+    {
+      "name": "websiteURL",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "header",
+      "type": "text"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "descriptionURI",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

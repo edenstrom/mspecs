@@ -1,0 +1,96 @@
+{
+  "name": "matchings",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "maxRooms",
+      "type": "smallint"
+    },
+    {
+      "name": "minRooms",
+      "type": "smallint"
+    },
+    {
+      "name": "maxPrice",
+      "type": "float"
+    },
+    {
+      "name": "minPrice",
+      "type": "float"
+    },
+    {
+      "name": "maxLivingArea",
+      "type": "smallint"
+    },
+    {
+      "name": "minLivingArea",
+      "type": "smallint"
+    },
+    {
+      "name": "maxHectare",
+      "type": "int"
+    },
+    {
+      "name": "minHectare",
+      "type": "int"
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "isActive",
+      "type": "bit",
+      "mandatory": true
+    },
+    {
+      "name": "residentialArea",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "countryId",
+      "type": "foreignKey",
+      "table": "countries",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "inactivatedDate",
+      "type": "datetime"
+    },
+    {
+      "name": "matchingChangedDate",
+      "type": "date"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "polygonListJSON",
+      "type": "jsonObject",
+      "note": "Expected structure: [ [{x:19.232323, y:56.3434343}, {x:15.33434, y:70.444}...], [{x:15.232323, y:50.3434343}, {x:16.33434, y:45.444}...]...]. A list that contains polygons which is a list with coordinates"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "isInternational",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "matchingAttributes",
+    "matchingGeographicalAreas"
+  ]
+}

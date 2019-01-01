@@ -1,0 +1,523 @@
+{
+  "name": "organizations",
+  "note": "This table contains information about all organizations that have a license in Mspecs.\nOrganizations can only read information about themselves.",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "note": "Normally the organization number, but can be any identifying string.",
+      "maxLength": 60,
+      "mandatory": true,
+      "unique": true,
+      "readOnly": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "applicationDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "activationDate",
+      "type": "datetime"
+    },
+    {
+      "name": "licenseStatus",
+      "type": "enum",
+      "enums": [
+        "ENUMS_LICENSE_STATUS_APPLICATION",
+        "ENUMS_LICENSE_STATUS_ACTIVE",
+        "ENUMS_LICENSE_STATUS_SUSPENDED",
+        "ENUMS_LICENSE_STATUS_TRIAL"
+      ]
+    },
+    {
+      "name": "emailDomainName",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "vatNumber",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "vatPercentage",
+      "type": "percentage",
+      "default": "25",
+      "mandatory": true
+    },
+    {
+      "name": "officePhoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "visitingStreetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "visitingPostalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "visitingCity",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "invoiceStreetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "invoicePostalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "invoiceCity",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "invoiceRecipient",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "invoiceEmail",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "invoiceAttention",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "licenseContactName",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "licenseContactPhoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "licenseContactEmail",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "technicalContactName",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "technicalContactPhoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "technicalContactEmail",
+      "type": "text",
+      "maxLength": 400
+    },
+    {
+      "name": "printDocumentHeaderAccent",
+      "type": "text",
+      "maxLength": 31
+    },
+    {
+      "name": "printDocumentTextAccent",
+      "type": "text",
+      "maxLength": 31
+    },
+    {
+      "name": "printDocumentHeaderLogoFileId",
+      "type": "keyField",
+      "table": "files"
+    },
+    {
+      "name": "logoFileId",
+      "type": "keyField",
+      "table": "files"
+    },
+    {
+      "name": "themeCssUrl",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "parentId",
+      "type": "foreignKey",
+      "table": "organizations"
+    },
+    {
+      "name": "dbUseExternal",
+      "type": "bit"
+    },
+    {
+      "name": "dbServerAddress",
+      "type": "text",
+      "maxLength": 19
+    },
+    {
+      "name": "dbServerPort",
+      "type": "text",
+      "maxLength": 5
+    },
+    {
+      "name": "dbServerUser",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "dbServerPassword",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "dbManagementSystem ",
+      "type": "enum",
+      "enums": [
+        "MsSql",
+        "MySql"
+      ]
+    },
+    {
+      "name": "smsSender",
+      "type": "text",
+      "maxLength": 11
+    },
+    {
+      "name": "providerId",
+      "type": "foreignKey",
+      "table": "providers"
+    },
+    {
+      "name": "webFontId",
+      "type": "foreignKey",
+      "table": "fonts"
+    },
+    {
+      "name": "printFontId",
+      "type": "foreignKey",
+      "table": "fonts"
+    },
+    {
+      "name": "dealWebPageBaseURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": ""
+    },
+    {
+      "name": "dealWebPageUpdateURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Web methods: GET & DELETE. {{dealId}} will be replaced with dealId and {{token}} with dealWebPageToken. When updating all deals {{dealId}} will be replaced with empty string"
+    },
+    {
+      "name": "dealWebPageDisplayURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": "{{dealId}} will be replaced with dealId. Used when publishing to marketing places"
+    },
+    {
+      "name": "dealWebPageDisplayImagesURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": "{{dealId}} will be replaced with dealId. Used when publishing to marketing places"
+    },
+    {
+      "name": "dealWebPageUpdateBiddingURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Web methods: GET. {{dealId}} will be replaced with dealId and {{biddingId}} will be replaced with biddingId. Used to specify that only bidding data should be updated"
+    },
+    {
+      "name": "objectDescriptionExternalURL",
+      "type": "text",
+      "maxLength": 250,
+      "note": "Will be opened in a new window. {{dealId}} will be replaced with dealId"
+    },
+    {
+      "name": "displayWindowExternalURL",
+      "type": "text",
+      "maxLength": 250,
+      "note": "Will be opened in a new window. {{dealId}} will be replaced with dealId and {{type}} will be replaced with either: portrait or landscape"
+    },
+    {
+      "name": "propertyCustomLink",
+      "type": "text",
+      "maxLength": 250,
+      "note": "If set a button will appear in the left menu in property view. Placeholders: {{dealId}} and {{estateId}}"
+    },
+    {
+      "name": "propertyCustomLinkTitle",
+      "type": "text",
+      "maxLength": 50,
+      "note": ""
+    },
+    {
+      "name": "timezone",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "Europe/Stockholm",
+        "Europe/Oslo",
+        "Europe/Helsinki",
+        "Europe/Copenhagen"
+      ],
+      "mandatory": true,
+      "default": "Europe/Stockholm"
+    },
+    {
+      "name": "pushSubscriptionURL",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "hiddenGUITagsList",
+      "type": "jsonObject"
+    },
+    {
+      "name": "logoutURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": ""
+    },
+    {
+      "name": "limitVisibilityToOrganizationalUnits",
+      "type": "bit"
+    },
+    {
+      "name": "useIpAddressFilter",
+      "type": "bit"
+    },
+    {
+      "name": "plusgiroNumber",
+      "type": "text",
+      "maxLength": 15
+    },
+    {
+      "name": "bankgiroNumber",
+      "type": "text",
+      "maxLength": 15
+    },
+    {
+      "name": "invoiceNumber",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "receiptNumber",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "invoiceNumberIncrement",
+      "type": "text",
+      "maxLength": 20,
+      "note": "Not in use!"
+    },
+    {
+      "name": "penaltyInterest",
+      "type": "percentage"
+    },
+    {
+      "name": "dueDays",
+      "type": "int",
+      "default": 30
+    },
+    {
+      "name": "documentFooterLeft",
+      "type": "text"
+    },
+    {
+      "name": "documentFooterCenter",
+      "type": "text"
+    },
+    {
+      "name": "documentFooterRight",
+      "type": "text"
+    },
+    {
+      "name": "suspendedDate",
+      "type": "datetime"
+    },
+    {
+      "name": "printCity",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "invoiceTermsOfPayment",
+      "type": "text"
+    },
+    {
+      "name": "allowInsecureLoginMethod",
+      "type": "bit"
+    },
+    {
+      "name": "ssoChallengeUrl",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "envelopeType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_ORGANIZATION_ENVELOPE_TYPE_V2",
+        "ENUMS_ORGANIZATION_ENVELOPE_TYPE_H2"
+      ]
+    },
+    {
+      "name": "archiveNumber",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "fTaxVATDescription",
+      "type": "text"
+    },
+    {
+      "name": "isMaklarsamfundetMember",
+      "type": "bit",
+      "note": "Will toggle that MSF logo will appear in documents. Functionality will be expanded later with more logos."
+    },
+    {
+      "name": "defaultMapLatitude",
+      "type": "text",
+      "maxLength": 22
+    },
+    {
+      "name": "defaultMapLongitude",
+      "type": "text",
+      "maxLength": 22
+    },
+    {
+      "name": "office365ClientId",
+      "type": "text"
+    },
+    {
+      "name": "office365Secret",
+      "type": "text"
+    },
+    {
+      "name": "alias",
+      "type": "text",
+      "maxLength": 3
+    },
+    {
+      "name": "documentFooterUpperShowOrgAlias",
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowBrokerAlias",
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowPropertyName",
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowPropertyAddress",
+      "default": true,
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowDealToken",
+      "default": true,
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowArchiveNumber",
+      "type": "bit"
+    },
+    {
+      "name": "customerNumber",
+      "type": "text",
+      "maxLength": 10,
+      "readOnly": true
+    },
+    {
+      "name": "supportURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Used to set company specific support urls that can be accessed in the avatar menu"
+    },
+    {
+      "name": "supportFormURL",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Used to set company specific support urls that can be accessed in the avatar menu"
+    },
+    {
+      "name": "defaultStartingPriceType",
+      "type": "text",
+      "enums": [
+        "ENUMS_ASKINGPRICETYPE_TYPE_OR_BY_APPOINTMENT",
+        "ENUMS_ASKINGPRICETYPE_TYPE_HIGHEST_BIDDER",
+        "ENUMS_ASKINGPRICETYPE_TYPE_IS_ACCEPTED_PRICE",
+        "ENUMS_ASKINGPRICETYPE_TYPE_SOLD_BY_QUOTATION",
+        "ENUMS_ASKINGPRICETYPE_TYPE_PRICE",
+        "ENUMS_ASKINGPRICETYPE_TYPE_STARTING_PRICE"
+      ],
+      "maxLength": 100
+    },
+    {
+      "name": "businessInsideEUOutsideSweden",
+      "type": "bit"
+    },
+    {
+      "name": "businessOutsideEUOutsideSweden",
+      "type": "bit"
+    },
+    {
+      "name": "companyHeadquarters",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "allowOrganizationUnitAdminToEditUsers",
+      "type": "bit"
+    },
+    {
+      "name": "changePasswordInterval",
+      "type": "int",
+      "note": "Set in number of days, null means that the policy is not invoked"
+    },
+    {
+      "name": "smsNumber",
+      "type": "text",
+      "maxLength": 11,
+      "readOnly": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "userAccounts",
+    "children"
+  ]
+}

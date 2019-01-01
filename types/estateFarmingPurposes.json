@@ -1,0 +1,25 @@
+{
+  "name": "estateFarmingPurposes",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "farmingPurposeId",
+      "type": "foreignKey",
+      "table": "farmingPurposes"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

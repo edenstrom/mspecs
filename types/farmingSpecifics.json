@@ -1,0 +1,119 @@
+{
+  "name": "farmingSpecifics",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates",
+      "mandatory": true
+    },
+    {
+      "name": "type",
+      "type": "text",
+      "maxLength": 80,
+      "enums": [
+        "ENUM_FARMING_SPECIFICS_TYPE_ACQUISITION",
+        "ENUM_FARMING_SPECIFICS_TYPE_INSPECTIONEXAMINATIONDUTY",
+        "ENUM_FARMING_SPECIFICS_TYPE_FORESTDETAILS",
+        "ENUM_FARMING_SPECIFICS_TYPE_ARABLELAND",
+        "ENUM_FARMING_SPECIFICS_TYPE_PASTURE",
+        "ENUM_FARMING_SPECIFICS_TYPE_LEASESUPPORTCONCESSIONS",
+        "ENUM_FARMING_SPECIFICS_TYPE_ENVIRONMENTALSUPPORTCOMMITMENTS",
+        "ENUM_FARMING_SPECIFICS_TYPE_NATURALASSETS",
+        "ENUM_FARMING_SPECIFICS_TYPE_ANCIENTCULTURALRELICS",
+        "ENUM_FARMING_SPECIFICS_TYPE_HUNTING",
+        "ENUM_FARMING_SPECIFICS_TYPE_FISHING",
+        "ENUM_FARMING_SPECIFICS_TYPE_REALPROPERTY",
+        "ENUM_FARMING_SPECIFICS_TYPE_OTHER",
+        "ENUM_FARMING_SPECIFICS_TYPE_ENVIRONMENT_IMPACT",
+        "ENUM_FARMING_SPECIFICS_TYPE_OTHER_SOIL_TYPES",
+        "ENUM_FARMING_SPECIFICS_TYPE_PLANS_REGULATIONS_ETC",
+        "ENUM_FARMING_SPECIFICS_TYPE_SUGAR_QUOTA",
+        "ENUM_FARMING_SPECIFICS_TYPE_SUPPORTGRANTS",
+        "ENUM_FARMING_SPECIFICS_TYPE_INFIELDS"
+      ]
+    },
+    {
+      "name": "subject",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "forestDescription",
+      "type": "text"
+    },
+    {
+      "name": "forestryAct",
+      "type": "text"
+    },
+    {
+      "name": "propertyBoundaries",
+      "type": "text"
+    },
+    {
+      "name": "forestG2",
+      "type": "decimal",
+      "digits": 11,
+      "decimals": 1,
+      "note": "cubic meters"
+    },
+    {
+      "name": "forestS1",
+      "type": "decimal",
+      "digits": 11,
+      "decimals": 1,
+      "note": "cubic meters"
+    },
+    {
+      "name": "forestS2",
+      "type": "decimal",
+      "digits": 11,
+      "decimals": 1,
+      "note": "cubic meters"
+    },
+    {
+      "name": "forestTotal",
+      "type": "decimal",
+      "digits": 11,
+      "decimals": 1,
+      "note": "cubic meters"
+    },
+    {
+      "name": "forestProductivity",
+      "type": "decimal",
+      "digits": 11,
+      "decimals": 1,
+      "note": "cubic meters"
+    },
+    {
+      "name": "planPreparer",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "forestPlan",
+      "type": "text"
+    },
+    {
+      "name": "prepared",
+      "type": "date"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

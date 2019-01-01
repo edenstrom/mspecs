@@ -1,0 +1,27 @@
+{
+  "name": "matchingAttributesMatching",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "matchingId",
+      "type": "foreignKey",
+      "table": "matchings",
+      "mandatory": true
+    },
+    {
+      "name": "matchingAttributeId",
+      "type": "foreignKey",
+      "table": "matchingAttributes",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

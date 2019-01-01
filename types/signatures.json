@@ -1,0 +1,73 @@
+{
+  "name": "signatures",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "headerText",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "signatureText",
+      "type": "text"
+    },
+    {
+      "name": "signatureType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_SIGNATURE_TYPE_BROKER",
+        "ENUMS_SIGNATURE_TYPE_BROKER_SECONDARY",
+        "ENUMS_SIGNATURE_TYPE_SELLER",
+        "ENUMS_SIGNATURE_TYPE_SELLER_CONTACTS",
+        "ENUMS_SIGNATURE_TYPE_SELLERS_WITNESS",
+        "ENUMS_SIGNATURE_TYPE_BUYER",
+        "ENUMS_SIGNATURE_TYPE_BUYER_CONTACTS",
+        "ENUMS_SIGNATURE_TYPE_BUYERS_WITNESS",
+        "ENUMS_SIGNATURE_TYPE_BUYERS_SELLERS_WITNESS",
+        "ENUMS_SIGNATURE_TYPE_WITNESS",
+        "ENUMS_SIGNATURE_TYPE_CONSENT",
+        "ENUMS_SIGNATURE_TYPE_ANONYMOUS",
+        "ENUMS_SIGNATURE_TYPE_DOCUMENT_WITNESS",
+        "ENUMS_SIGNATURE_TYPE_SELLER_DECEASED_INHERITOR",
+        "ENUMS_SIGNATURE_TYPE_SELLER_DECEASED_INHERITOR_WITH_SHARE",
+        "ENUMS_SIGNATURE_TYPE_SELLER_CONTACT_DECEASED_INHERITOR",
+        "ENUMS_SIGNATURE_TYPE_SELLER_COMPANY_SIGNATORY",
+        "ENUMS_SIGNATURE_TYPE_BUYER_COMPANY_SIGNATORY"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "shouldNotSign",
+      "type": "bit"
+    },
+    {
+      "name": "printOnSeparatePage",
+      "type": "bit"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "date",
+      "type": "date"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

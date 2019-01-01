@@ -1,0 +1,25 @@
+{
+  "name": "organizationFiles",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files",
+      "mandatory": true
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

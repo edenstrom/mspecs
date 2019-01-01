@@ -1,0 +1,28 @@
+{
+  "name": "estateEconomicTypeCodes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "code",
+      "type": "smallint"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

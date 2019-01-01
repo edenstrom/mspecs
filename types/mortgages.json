@@ -1,0 +1,68 @@
+{
+  "name": "mortgages",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "isImportedMortgage",
+      "type": "bit"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "externalId",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "logEntryId",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "holderName",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "registrationDate",
+      "type": "date"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "isWrittenMortgage",
+      "type": "bit"
+    },
+    {
+      "name": "currency",
+      "type": "foreignKey",
+      "table": "currencies",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

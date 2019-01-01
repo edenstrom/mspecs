@@ -1,0 +1,77 @@
+{
+  "name": "associationDocuments",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "currentVersionId",
+      "type": "foreignKey",
+      "table": "associationVersions"
+    },
+    {
+      "name": "supplyingOrganizationId",
+      "type": "foreignKey",
+      "table": "organizations"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "keyField",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "preValidationUrl",
+      "type": "text",
+      "maxLength": 400
+    },
+    {
+      "name": "postValidationUrl",
+      "type": "text",
+      "maxLength": 400
+    },
+    {
+      "name": "clonedAssociationDocumentId",
+      "type": "foreignKey",
+      "table": "associationDocuments"
+    },
+    {
+      "name": "clonedAssociationVersionId",
+      "type": "foreignKey",
+      "table": "associationVersions"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "versions",
+    "categories",
+    "objectTypes"
+  ]
+}

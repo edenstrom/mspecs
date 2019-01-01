@@ -1,0 +1,25 @@
+{
+  "name": "estateContactInformation",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "contactInformationId",
+      "type": "foreignKey",
+      "table": "contactInformation"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

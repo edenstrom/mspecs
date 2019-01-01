@@ -1,0 +1,51 @@
+{
+  "name": "easementsAndDetails",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "easementType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_EASEMENTTYPE_COMMUNITYFACILITIES",
+        "ENUMS_EASEMENTTYPE_ENROLLEDEASEMENT",
+        "ENUMS_EASEMENTTYPE_PLANSANDREGULATIONS",
+        "ENUMS_EASEMENTTYPE_PREFERENTIALBURDEN",
+        "ENUMS_EASEMENTTYPE_PREFERENTIALRIGHT",
+        "ENUMS_EASEMENTTYPE_JOINT_PROPERTY",
+        "ENUMS_EASEMENTTYPE_ROADS",
+        "ENUMS_EASEMENTTYPE_SEIZURE"
+      ]
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "externalId",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "logEntryId",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "isImported",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

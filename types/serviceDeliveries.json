@@ -1,0 +1,36 @@
+{
+  "name": "serviceDeliveries",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "servicesInDealId",
+      "type": "foreignKey",
+      "table": "servicesInDeals"
+    },
+    {
+      "name": "resultText",
+      "type": "text"
+    },
+    {
+      "name": "resultURL",
+      "type": "text",
+      "maxLength": 250
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

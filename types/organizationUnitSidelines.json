@@ -1,0 +1,27 @@
+{
+  "name": "organizationUnitSidelines",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits",
+      "mandatory": true
+    },
+    {
+      "name": "sidelineId",
+      "type": "foreignKey",
+      "table": "sidelines",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

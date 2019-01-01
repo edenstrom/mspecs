@@ -1,0 +1,27 @@
+{
+  "name": "buyerComments",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "commentId",
+      "type": "foreignKey",
+      "table": "comments",
+      "mandatory": true
+    },
+    {
+      "name": "buyerId",
+      "type": "foreignKey",
+      "table": "buyers",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

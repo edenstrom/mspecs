@@ -1,0 +1,48 @@
+{
+  "name": "quarantine",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dataType",
+      "type": "enum",
+      "enums": [
+        "ENUM_QUARANTINE_DATA_TYPE_FORM_INVITATION",
+        "ENUM_QUARANTINE_DATA_TYPE_VIEWING_BOOKING",
+        "ENUM_QUARANTINE_DATA_TYPE_MATCHING",
+        "ENUM_QUARANTINE_DATA_TYPE_LEAD"
+      ]
+    },
+    {
+      "name": "eventTable",
+      "type": "text",
+      "maxLength": 120,
+      "mandatory": true
+    },
+    {
+      "name": "eventId",
+      "type": "genericForeignKey",
+      "tableNameInField": "eventTable",
+      "mandatory": true
+    },
+    {
+      "name": "eventData",
+      "type": "jsonObject"
+    },
+    {
+      "name": "deleteAtDate",
+      "type": "date"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

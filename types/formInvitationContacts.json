@@ -1,0 +1,37 @@
+{
+  "name": "formInvitationContacts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "formInvitation",
+      "type": "foreignKey",
+      "table": "formInvitations",
+      "mandatory": true
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

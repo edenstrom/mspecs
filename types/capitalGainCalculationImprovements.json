@@ -1,0 +1,45 @@
+{
+  "name": "capitalGainCalculationImprovements",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "capitalGainCalculationId",
+      "type": "foreignKey",
+      "table": "capitalGainCalculations",
+      "mandatory": true
+    },
+    {
+      "name": "year",
+      "type": "year"
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "cost",
+      "type": "money"
+    },
+    {
+      "name": "costDeduction",
+      "type": "money"
+    },
+    {
+      "name": "repairAndMaintenance",
+      "type": "bit"
+    },
+    {
+      "name": "newAndRemodelling",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,34 @@
+{
+  "name": "customPropertyLinks",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 50,
+      "mandatory": true,
+      "note": "Title of the button"
+    },
+    {
+      "name": "url",
+      "type": "text",
+      "maxLength": 255,
+      "mandatory": true,
+      "note": "If set a button will appear in the left menu in property view. Placeholders: {{dealId}} and {{estateId}}"
+    },
+    {
+      "name": "color",
+      "type": "text",
+      "maxLength": 31,
+      "note": "Color of the button, keep in mind that the text will be white"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

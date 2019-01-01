@@ -1,0 +1,27 @@
+{
+  "name": "viewingEvents",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "viewingId",
+      "type": "foreignKey",
+      "table": "viewings",
+      "mandatory": true
+    },
+    {
+      "name": "eventId",
+      "type": "foreignKey",
+      "table": "events",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

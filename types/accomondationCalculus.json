@@ -1,0 +1,40 @@
+{
+  "name": "accomondationCalculus",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "price",
+      "type": "money"
+    },
+    {
+      "name": "cashPayment",
+      "type": "money"
+    },
+    {
+      "name": "monthlyOperatingCost",
+      "type": "money"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

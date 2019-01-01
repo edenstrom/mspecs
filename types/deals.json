@@ -1,0 +1,742 @@
+{
+  "name": "deals",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "buyerGroupId",
+      "type": "foreignKey",
+      "table": "buyerGroups",
+      "note": "The buyerGroup that is set to buy the deal."
+    },
+    {
+      "name": "objectStatus",
+      "type": "enum",
+      "enums": [
+        "ENUMS_OBJECTSTATUS_TYPE_IN_PROGRESS",
+        "ENUMS_OBJECTSTATUS_TYPE_REPOSSESSED",
+        "ENUMS_OBJECTSTATUS_TYPE_ESTIMATE",
+        "ENUMS_OBJECTSTATUS_TYPE_DORMANT",
+        "ENUMS_OBJECTSTATUS_TYPE_RESERVED",
+        "ENUMS_OBJECTSTATUS_TYPE_COMING",
+        "ENUMS_OBJECTSTATUS_TYPE_NO ASSIGNMENT",
+        "ENUMS_OBJECTSTATUS_TYPE_LOST_LISTING",
+        "ENUMS_OBJECTSTATUS_TYPE_OTHER",
+        "ENUMS_OBJECTSTATUS_TYPE_ARCHIVED",
+        "ENUMS_OBJECTSTATUS_TYPE_CLOSED",
+        "ENUMS_OBJECTSTATUS_TYPE_REFERENCE",
+        "ENUMS_OBJECTSTATUS_TYPE_FOR_SALE",
+        "ENUMS_OBJECTSTATUS_TYPE_INTAKE",
+        "ENUMS_OBJECTSTATUS_TYPE_MARKETING",
+        "ENUMS_OBJECTSTATUS_TYPE_SOLD",
+        "ENUMS_OBJECTSTATUS_TYPE_LEASED",
+        "ENUMS_OBJECTSTATUS_TYPE_TERMINATED",
+        "ENUMS_OBJECTSTATUS_TYPE_AVAILABLE_FOR_RENT"
+      ],
+      "note": "Which status the deal have."
+    },
+    {
+      "name": "communicationTokenId",
+      "type": "foreignKey",
+      "table": "communicationTokens",
+      "schema": "mspx_admin",
+      "note": "Token used for incoming sms and a short code to identify the deal."
+    },
+    {
+      "name": "mainEstateId",
+      "type": "foreignKey",
+      "table": "estates",
+      "note": "The main estate of the deal, will be used as the main marketing estate."
+    },
+    {
+      "name": "mainBrokerContactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "note": "The responsible broker."
+    },
+    {
+      "name": "capitalGainCalculationId",
+      "type": "foreignKey",
+      "table": "capitalGainCalculations"
+    },
+    {
+      "name": "webPageURL",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "webPageImagesURL",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "webPageAccessibleOnlyByDirectUrl",
+      "type": "bit"
+    },
+    {
+      "name": "contractType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_CONTRACTTYPES_TYPE_WRITE ASSIGNMENT",
+        "ENUMS_CONTRACTTYPES_TYPE_SALES",
+        "ENUMS_CONTRACTTYPES_TYPE_PAID ESTIMATE"
+      ],
+      "note": ""
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits",
+      "note": "The organizationUnit the deal is administered in."
+    },
+    {
+      "name": "currentFlowStepId",
+      "type": "foreignKey",
+      "table": "flowSteps",
+      "schema": "mspx_admin",
+      "note": "The flow step the deal is currently in."
+    },
+    {
+      "name": "biddingId",
+      "type": "foreignKey",
+      "table": "biddings",
+      "note": "The bidding that belongs to the deal."
+    },
+    {
+      "name": "mainImageFileId",
+      "type": "foreignKey",
+      "table": "files",
+      "note": "The image that represents the deal in flow and deal page."
+    },
+    {
+      "name": "currency",
+      "mandatory": true,
+      "default": 1,
+      "type": "foreignKey",
+      "table": "currencies",
+      "schema": "mspx_admin",
+      "note": "The currency the deal is dealt in."
+    },
+    {
+      "name": "sellingTextSubject",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "sellingTextShort",
+      "type": "text",
+      "maxLength": 300
+    },
+    {
+      "name": "sellingText",
+      "type": "text"
+    },
+    {
+      "name": "externalId",
+      "type": "text",
+      "maxLength": 100,
+      "note": "Used by brokers to set their own identifier on deals"
+    },
+    {
+      "name": "displayName",
+      "type": "text",
+      "maxLength": 100,
+      "note": "The name the deal is displayed in bidding, flow page and deal page."
+    },
+    {
+      "name": "listingStartDate",
+      "type": "date",
+      "note": "Start date when the deal mediation process started."
+    },
+    {
+      "name": "listingEndDate",
+      "type": "date",
+      "note": "End date when the deal mediation process ended."
+    },
+    {
+      "name": "contractDate",
+      "type": "date",
+      "note": "Time when the contract should be written."
+    },
+    {
+      "name": "downPaymentDate",
+      "type": "date",
+      "note": "When the down payment should be paid."
+    },
+    {
+      "name": "downPaymentAmount",
+      "type": "money",
+      "note": "Amount of the down payment."
+    },
+    {
+      "name": "isDownPaymentDepositedWithBroker",
+      "type": "bit"
+    },
+    {
+      "name": "isDownPaymentInBrokerClientAccount",
+      "type": "bit",
+      "default": true
+    },
+    {
+      "name": "downPaymentAccountId",
+      "type": "foreignKey",
+      "table": "bankAccounts",
+      "note": "The bank account the down payment should be stored."
+    },
+    {
+      "name": "sellerDownPaymentAccountId",
+      "type": "foreignKey",
+      "table": "bankAccounts",
+      "note": "The bank account the down payment should be stored if it should be paid directly to one seller."
+    },
+    {
+      "name": "depositedInAmount",
+      "type": "money",
+      "note": "The amount the buyers have paid of the down payment."
+    },
+    {
+      "name": "depositedInDate",
+      "type": "date",
+      "note": "Date when the down payment is submitted."
+    },
+    {
+      "name": "depositedInComment",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Comment on incoming down payment."
+    },
+    {
+      "name": "legalEntityAcceptableSetting",
+      "type": "enum",
+      "enums": [
+        "ENUM_LEGAL_ENTITY_ACCEPTABLE_SETTING_YES",
+        "ENUM_LEGAL_ENTITY_ACCEPTABLE_SETTING_NO",
+        "ENUM_LEGAL_ENTITY_ACCEPTABLE_SETTING_AFTER_CONSIDERATION"
+      ]
+    },
+    {
+      "name": "isVIP",
+      "type": "bit",
+      "note": "Set true if the deal should not be used for statistics, like mäklarstatistik."
+    },
+    {
+      "name": "isBuyerApprovedByTennant",
+      "type": "bit"
+    },
+    {
+      "name": "buyerApprovalByTennantSentDate",
+      "type": "date"
+    },
+    {
+      "name": "archiveNumber",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "accessDate",
+      "type": "date",
+      "note": "The date when the buyers can access the property."
+    },
+    {
+      "name": "accessComment",
+      "type": "text"
+    },
+    {
+      "name": "accessDateSeller",
+      "type": "datetime",
+      "note": "When the sellers should meet the broker."
+    },
+    {
+      "name": "accessDateBuyer",
+      "type": "datetime",
+      "note": "When the buyers should meet the broker."
+    },
+    {
+      "name": "cashDefinitiveStatementComment",
+      "type": "text"
+    },
+    {
+      "name": "startingPrice",
+      "type": "money",
+      "note": "Currency is deals.currencyId"
+    },
+    {
+      "name": "finalPrice",
+      "type": "money",
+      "note": "Currency is deals.currencyId"
+    },
+    {
+      "name": "finalPriceInText",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "startingPriceType",
+      "type": "text",
+      "enums": [
+        "ENUMS_ASKINGPRICETYPE_TYPE_OR_BY_APPOINTMENT",
+        "ENUMS_ASKINGPRICETYPE_TYPE_HIGHEST_BIDDER",
+        "ENUMS_ASKINGPRICETYPE_TYPE_IS_ACCEPTED_PRICE",
+        "ENUMS_ASKINGPRICETYPE_TYPE_SOLD_BY_QUOTATION",
+        "ENUMS_ASKINGPRICETYPE_TYPE_PRICE",
+        "ENUMS_ASKINGPRICETYPE_TYPE_STARTING_PRICE"
+      ],
+      "maxLength": 100
+    },
+    {
+      "name": "foreignStartingPrice",
+      "type": "money"
+    },
+    {
+      "name": "foreignStartingPriceCurrencyId",
+      "type": "foreignKey",
+      "table": "currencies",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "abortionCompensation",
+      "type": "money",
+      "note": "The payment the broker will received if the deal is aborted for some reason."
+    },
+    {
+      "name": "isInternational",
+      "type": "bit"
+    },
+    {
+      "name": "approveMarketingOfFinalPrice",
+      "type": "bit"
+    },
+    {
+      "name": "approveMarketingOfDeal",
+      "type": "bit"
+    },
+    {
+      "name": "archiveExternalId",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "buyersPartOfMonthlyRent",
+      "type": "money"
+    },
+    {
+      "name": "buyersPartOfMunicipalPropertyTax",
+      "type": "money"
+    },
+    {
+      "name": "outgoingDownPaymentTransactionGroupId",
+      "type": "foreignKey",
+      "table": "transactionGroups",
+      "note": "The transactions of the down payment to the sellers."
+    },
+    {
+      "name": "incomingPaymentTransactionGroupId",
+      "type": "foreignKey",
+      "table": "transactionGroups",
+      "note": "How the main payment will be made.(How the buyers will pay)."
+    },
+    {
+      "name": "outgoingPaymentTransactionGroupId",
+      "type": "foreignKey",
+      "table": "transactionGroups",
+      "note": "3rd, How the main payment will be distributed.(How the sellers will be paid)."
+    },
+    {
+      "name": "outgoingPaymentBankAccountId",
+      "type": "foreignKey",
+      "table": "bankAccounts",
+      "note": "1th, The main payment will be to only this account"
+    },
+    {
+      "name": "outgoingPaymentBankAccountText",
+      "type": "text",
+      "maxLength": 150,
+      "note": "2th, The main payment will be to only this account"
+    },
+    {
+      "name": "accessLocation",
+      "type": "text",
+      "maxLength": 150,
+      "note": "Location where clearance will be sorted."
+    },
+    {
+      "name": "accessOfficer",
+      "type": "text",
+      "maxLength": 150,
+      "note": "Name of the officer that will handle money transactions."
+    },
+    {
+      "name": "commissionId",
+      "type": "foreignKey",
+      "table": "commissions"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "cashDefinitiveStatementCommentSeller",
+      "type": "text"
+    },
+    {
+      "name": "cashDefinitiveStatementCommentBuyer",
+      "type": "text"
+    },
+    {
+      "name": "cashDefinitiveStatementFeeAndTaxInformation",
+      "type": "text"
+    },
+    {
+      "name": "cashDefinitiveStatementHideDownPaymentTransactions",
+      "type": "bit"
+    },
+    {
+      "name": "importedDate",
+      "type": "datetime"
+    },
+    {
+      "name": "importedName",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "sellingMethodIsQuotation",
+      "type": "bit"
+    },
+    {
+      "name": "sellingMethodQuotationDateTime",
+      "type": "datetime"
+    },
+    {
+      "name": "sellingMethodIsBid",
+      "type": "bit"
+    },
+    {
+      "name": "sellingMethodBidDateTime",
+      "type": "datetime"
+    },
+    {
+      "name": "sellingMethodIsInterest",
+      "type": "bit"
+    },
+    {
+      "name": "sellingMethodInterestDateTime",
+      "type": "datetime"
+    },
+    {
+      "name": "sellingMethodIsFixedPrice",
+      "type": "bit"
+    },
+    {
+      "name": "sellingMethodIsOpenBidding",
+      "type": "bit"
+    },
+    {
+      "name": "sellingMethodIsPublicAuction",
+      "type": "bit"
+    },
+    {
+      "name": "sellingMethodPublicAuctionDateTime",
+      "type": "datetime"
+    },
+    {
+      "name": "sellingMethodDescription",
+      "type": "text"
+    },
+    {
+      "name": "sellingMethodTermsOfPayment",
+      "type": "text",
+      "enums": [
+        "FARMING_SELLING_METHOD_TERMS1",
+        "FARMING_SELLING_METHOD_TERMS2",
+        "FARMING_SELLING_METHOD_TERMS3"
+      ]
+    },
+    {
+      "name": "isNewDevelopment",
+      "type": "bit",
+      "note": "If set to true, the deal should be marketed as a new development deal"
+    },
+    {
+      "name": "newDevelopmentStatus",
+      "type": "enum",
+      "enums": [
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_COMPLETED",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_NOT_READY_FOR_SALE",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_COMING",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_INACTIVE",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_PLANNED",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_ACTIVE",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_SOLDOUT",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_ARCHIVED",
+        "ENUM_DEAL_NEW_DEVELOPMENT_STATUS_MARKETING"
+      ]
+    },
+    {
+      "name": "streetAddress",
+      "type": "text",
+      "maxLength": 100,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "postalCode",
+      "type": "text",
+      "maxLength": 20,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "builder",
+      "type": "text",
+      "maxLength": 120,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "minNumberOfRooms",
+      "type": "decimal",
+      "digits": 4,
+      "decimals": 1,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "maxNumberOfRooms",
+      "type": "decimal",
+      "digits": 4,
+      "decimals": 1,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "minLivingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "maxLivingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "minOtherLivingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "maxOtherLivingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "minPrice",
+      "type": "money",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "maxPrice",
+      "type": "money",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "minMonthlyRent",
+      "type": "money",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "maxMonthlyRent",
+      "type": "money",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "numberOfHomes",
+      "type": "int",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "environment",
+      "type": "text",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "servicesAndCommunications",
+      "type": "text",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "directions",
+      "type": "text",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "latitude",
+      "type": "text",
+      "maxLength": 22,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "longitude",
+      "type": "text",
+      "maxLength": 22,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "buildingStarted",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "preliminaryOccupancy",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "plotArea",
+      "type": "decimal",
+      "digits": 15,
+      "decimals": 1,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "plotDescription",
+      "type": "text",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "developmentPhase",
+      "type": "text",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "objectType",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "habitat",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Used only in new development"
+    },
+    {
+      "name": "salesStartDate",
+      "type": "date",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "objectTypeId",
+      "type": "foreignKey",
+      "table": "objectTypes",
+      "schema": "mspx_admin",
+      "note": "Used only in new development"
+    },
+    {
+      "name": "countryId",
+      "type": "foreignKey",
+      "table": "countries",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "accessOfficerContactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "note": "Will contain the bank officer that handles the money transactions."
+    },
+    {
+      "name": "accessLocationContactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "note": "Will contain the bank location that handles the money transactions."
+    },
+    {
+      "name": "earliestAccessDateComment",
+      "type": "text",
+      "maxLength": 50,
+      "enums": [
+        "ENUMS_EARLIESTACCESSDATECOMMENT_URGENT",
+        "ENUMS_EARLIESTACCESSDATECOMMENT_IMMEDIATELY",
+        "ENUMS_EARLIESTACCESSDATECOMMENT_ACCORDING_TO_AGREEMENT",
+        "ENUMS_EARLIESTACCESSDATECOMMENT_DISCUSSION"
+      ]
+    },
+    {
+      "name": "sellAsCompany",
+      "type": "bit",
+      "note": "Only used for commercial"
+    },
+    {
+      "name": "assignmentIsTerminated",
+      "type": "bit"
+    },
+    {
+      "name": "assignmentTerminatedDate",
+      "type": "date"
+    },
+    {
+      "name": "assignmentTerminatedReason",
+      "type": "text"
+    },
+    {
+      "name": "valuationDate",
+      "type": "date"
+    },
+    {
+      "name": "sellerContactReferralChannelId",
+      "type": "foreignKey",
+      "table": "contactReferralChannels"
+    },
+    {
+      "name": "quotationDueDate",
+      "type": "date"
+    },
+    {
+      "name": "quotationComment",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "isPublished",
+      "type": "bit",
+      "isDeprecated": true,
+      "note": "Deprecated: Use dealMarketingplaces"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "estates",
+    "filesInDeal",
+    "sellers",
+    "buyerGroups",
+    "teamRoles",
+    "versions",
+    "viewings",
+    "buyerSettlementAmounts",
+    "sellerSettlementAmounts",
+    "dealCostAmounts",
+    "receipts",
+    "imagesInDeals"
+  ]
+}

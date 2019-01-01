@@ -1,0 +1,23 @@
+{
+  "name": "currencies",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "isoCode",
+      "type": "currency",
+      "note": "ISO 4217"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

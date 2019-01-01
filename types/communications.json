@@ -1,0 +1,72 @@
+{
+  "name": "communications",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "subject",
+      "type": "text"
+    },
+    {
+      "name": "prioEmail",
+      "type": "tinyint"
+    },
+    {
+      "name": "prioSms",
+      "type": "tinyint"
+    },
+    {
+      "name": "prioLetter",
+      "type": "tinyint"
+    },
+    {
+      "name": "emailId",
+      "type": "foreignKey",
+      "table": "emails"
+    },
+    {
+      "name": "smsOutboxId",
+      "type": "foreignKey",
+      "table": "smsOutboxes"
+    },
+    {
+      "name": "smsSender",
+      "type": "text",
+      "maxLength": 14
+    },
+    {
+      "name": "smsMessage",
+      "type": "text"
+    },
+    {
+      "name": "letterSubject",
+      "type": "text"
+    },
+    {
+      "name": "letterBody",
+      "type": "text"
+    },
+    {
+      "name": "letterSigneeText",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

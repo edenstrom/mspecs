@@ -1,0 +1,146 @@
+{
+  "name": "capitalGainCalculationSellers",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "capitalGainCalculationId",
+      "type": "foreignKey",
+      "table": "capitalGainCalculations",
+      "mandatory": true
+    },
+    {
+      "name": "sellerId",
+      "type": "foreignKey",
+      "table": "sellers",
+      "mandatory": true
+    },
+    {
+      "name": "reversalOfDeferralAmount",
+      "type": "money"
+    },
+    {
+      "name": "oldShare",
+      "type": "percentage",
+      "note": "This share needs to be in percentage"
+    },
+    {
+      "name": "isForcedSale",
+      "type": "bit"
+    },
+    {
+      "name": "deferral",
+      "type": "enum",
+      "enums": [
+        "ENUM_CAPITAL_GAIN_CALCULATION_SELLER_DEFERRAL_PRELIMINARY",
+        "ENUM_CAPITAL_GAIN_CALCULATION_SELLER_DEFERRAL_FINAL"
+      ]
+    },
+    {
+      "name": "newProperty",
+      "type": "enum",
+      "enums": [
+        "ENUM_CAPITAL_GAIN_CALCULATION_SELLER_NEW_PROPERTY_HOUSE_OR_CONDOMINIUM",
+        "ENUM_CAPITAL_GAIN_CALCULATION_SELLER_NEW_PROPERTY_TENANT_OWNERSHIP"
+      ]
+    },
+    {
+      "name": "propertyName",
+      "type": "text",
+      "maxLength": 200,
+      "note": "used to store HA name as well as property designation"
+    },
+    {
+      "name": "newShare",
+      "type": "percentage",
+      "note": "This share needs to be in percentage"
+    },
+    {
+      "name": "dateOfSettlement",
+      "type": "date"
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 20,
+      "note": "Used to store HA organizationNr, Only K6"
+    },
+    {
+      "name": "apartmentNumber",
+      "type": "text",
+      "maxLength": 20,
+      "note": "Only K6"
+    },
+    {
+      "name": "contractDate",
+      "type": "date"
+    },
+    {
+      "name": "price",
+      "type": "money"
+    },
+    {
+      "name": "newAndRemodeling",
+      "type": "money",
+      "note": "Only K5"
+    },
+    {
+      "name": "propertyUsedAsPermanentOrHolidayLivingFullPeriod",
+      "type": "bit"
+    },
+    {
+      "name": "livingPeriodFromDate",
+      "type": "date"
+    },
+    {
+      "name": "livingPeriodToDate",
+      "type": "date"
+    },
+    {
+      "name": "propertyUsedForPermanentOrHolidayLiving",
+      "type": "percentage"
+    },
+    {
+      "name": "livedOnPropertyFromDate",
+      "type": "date"
+    },
+    {
+      "name": "livedOnPropertyToDate",
+      "type": "date"
+    },
+    {
+      "name": "beenLivingOneYearPrecedingSale",
+      "type": "bit",
+      "note": "At least one year immediately preceding the date of sale under the purchase contact"
+    },
+    {
+      "name": "beenLiving3OfLast5YearsBeforeSale",
+      "type": "bit",
+      "note": "A minimum of three years of the last five years before date of sale under the purchase contract"
+    },
+    {
+      "name": "acquiredNewHomeBeforeSale",
+      "type": "bit",
+      "note": "I have acquired my new home before the sale of the property and requests the residence conditions shall be assessed at acquisition date for my new home"
+    },
+    {
+      "name": "reversalOfImpairment",
+      "type": "money"
+    },
+    {
+      "name": "departsFromProfit",
+      "type": "money"
+    },
+    {
+      "name": "deprecationForCompensationFundForLand",
+      "type": "money"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

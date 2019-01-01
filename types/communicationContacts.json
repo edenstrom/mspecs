@@ -1,0 +1,36 @@
+{
+  "name": "communicationContacts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "communicationId",
+      "type": "foreignKey",
+      "table": "communications",
+      "mandatory": true
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "method",
+      "type": "enum",
+      "enums": [
+        "ENUM_COMMUNICATION_CONTACT_METHOD_EMAIL",
+        "ENUM_COMMUNICATION_CONTACT_METHOD_SMS",
+        "ENUM_COMMUNICATION_CONTACT_METHOD_LETTER",
+        "ENUM_COMMUNICATION_CONTACT_METHOD_NONE"
+      ]
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

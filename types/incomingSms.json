@@ -1,0 +1,39 @@
+{
+  "name": "incomingSms",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "communicationTokenId",
+      "type": "foreignKey",
+      "table": "communicationTokens",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "message",
+      "type": "text",
+      "maxLength": 160
+    },
+    {
+      "name": "sender",
+      "type": "text",
+      "maxLength": 14
+    },
+    {
+      "name": "receiver",
+      "type": "text",
+      "maxLength": 14
+    },
+    {
+      "name": "receivedDate",
+      "type": "datetime"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

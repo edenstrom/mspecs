@@ -1,0 +1,39 @@
+{
+  "name": "communicationTokens",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "organizationId",
+      "type": "foreignKey",
+      "table": "organizations",
+      "mandatory": true
+    },
+    {
+      "name": "token",
+      "type": "text",
+      "maxLength": 10,
+      "unique": true
+    },
+    {
+      "name": "startDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "endDate",
+      "type": "datetime"
+    },
+    {
+      "name": "usedToken",
+      "type": "text",
+      "maxLength": 10
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

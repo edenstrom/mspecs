@@ -1,0 +1,39 @@
+{
+  "name": "associationUrls",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "displayName",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "url",
+      "type": "text",
+      "maxLength": 200,
+      "mandatory": true
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "supplyingOrganizationId",
+      "type": "foreignKey",
+      "table": "organizations",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

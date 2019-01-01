@@ -1,0 +1,46 @@
+{
+  "name": "outgoingSms",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "smsOutboxId",
+      "type": "foreignKey",
+      "table": "smsOutboxes"
+    },
+    {
+      "name": "phoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "individualText",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "enum",
+      "enums": [
+        "ENUMS_SMSSTATUS_DELIVERED",
+        "ENUMS_SMSSTATUS_UNDELIVERED",
+        "ENUMS_SMSSTATUS_WAITING"
+      ]
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "sentDate",
+      "type": "datetime"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

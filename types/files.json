@@ -1,0 +1,97 @@
+{
+  "name": "files",
+  "note": "When sending POST to create new file it's possible to send additional parameters. upload(boolean, if originalURI is set the file will be uploaded to fileserver) and dismissOriginal(boolean, depends on upload, if set the originalURI will be the same as sent in, but thumbnailURI and viewURI will be set by fileServer)",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "viewURI",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Max 1024x1024"
+    },
+    {
+      "name": "viewResolution",
+      "type": "text",
+      "maxLength": 11
+    },
+    {
+      "name": "thumbnailURI",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Max 80x80"
+    },
+    {
+      "name": "thumbnailResolution",
+      "type": "text",
+      "maxLength": 11
+    },
+    {
+      "name": "deleteURI",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "originalURI",
+      "type": "text",
+      "maxLength": 500
+    },
+    {
+      "name": "originalResolution",
+      "type": "text",
+      "maxLength": 11
+    },
+    {
+      "name": "fileSize",
+      "type": "int unsigned",
+      "note": "File size is saved in bytes"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int unsigned"
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "fileCategoryId",
+      "type": "foreignKey",
+      "table": "fileCategories"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "isImage",
+      "type": "bit"
+    },
+    {
+      "name": "isPublished",
+      "type": "bit"
+    },
+    {
+      "name": "isMarketing",
+      "type": "bit"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

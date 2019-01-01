@@ -1,0 +1,41 @@
+{
+  "name": "brokerJournalEventTypes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "flowStepId",
+      "type": "foreignKey",
+      "table": "flowSteps"
+    },
+    {
+      "name": "isMandatory",
+      "type": "bit"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "organizationId",
+      "type": "foreignKey",
+      "table": "organizations"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

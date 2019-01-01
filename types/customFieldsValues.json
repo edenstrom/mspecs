@@ -1,0 +1,38 @@
+{
+  "name": "customFieldsValues",
+  "isConnectionTable": false,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "customFieldId",
+      "type": "foreignKey",
+      "table": "customFields",
+      "mandatory": true
+    },
+    {
+      "name": "value",
+      "type": "text",
+      "mandatory": true
+    },
+    {
+      "name": "foreignId",
+      "type": "genericForeignKey",
+      "tableNameInField": "tableName",
+      "mandatory": true
+    },
+    {
+      "name": "tableName",
+      "type": "text",
+      "maxLength": 40,
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

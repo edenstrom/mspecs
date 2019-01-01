@@ -1,0 +1,63 @@
+{
+  "name": "servicesInDeals",
+  "isConnectionTable": false,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "serviceId",
+      "type": "foreignKey",
+      "table": "services",
+      "mandatory": true,
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "cost",
+      "type": "money"
+    },
+    {
+      "name": "externalId",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "isDelivered",
+      "type": "bit"
+    },
+    {
+      "name": "isDeliveryAccepted",
+      "type": "bit"
+    },
+    {
+      "name": "hasChanged",
+      "type": "bit",
+      "note": "Set to 0 or null when viewed."
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

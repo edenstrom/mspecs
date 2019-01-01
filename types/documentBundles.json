@@ -1,0 +1,38 @@
+{
+  "name": "documentBundles",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100,
+      "mandatory": true
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "customFieldId",
+      "type": "foreignKey",
+      "table": "customFields"
+    },
+    {
+      "name": "customFieldValue",
+      "type": "text"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

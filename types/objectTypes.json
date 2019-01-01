@@ -1,0 +1,27 @@
+{
+  "name": "objectTypes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 40,
+      "mandatory": true
+    },
+    {
+      "name": "flowTemplateId",
+      "type": "foreignKey",
+      "table": "flowTemplates"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "letterTemplates"
+  ]
+}

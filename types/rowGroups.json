@@ -1,0 +1,36 @@
+{
+  "name": "rowGroups",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "versionId",
+      "type": "foreignKey",
+      "table": "versions",
+      "mandatory": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "activeRowId",
+      "type": "foreignKey",
+      "table": "rows"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "uniqueFields": [
+    [
+      "versionId",
+      "name"
+    ]
+  ],
+  "collections": []
+}

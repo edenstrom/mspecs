@@ -1,0 +1,29 @@
+{
+  "name": "fonts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "printCmd",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "webName",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

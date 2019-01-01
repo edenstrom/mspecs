@@ -1,0 +1,63 @@
+{
+  "name": "letters",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "senderContactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "recipientContactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "note": "If both recipient and recipientContactId is set then contactId will be used"
+    },
+    {
+      "name": "recipient",
+      "type": "text",
+      "note": "If both recipient and recipientContactId is set then contactId will be used"
+    },
+    {
+      "name": "cityAndDate",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "subject",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "signature",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

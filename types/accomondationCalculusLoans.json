@@ -1,0 +1,42 @@
+{
+  "name": "accomondationCalculusLoans",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "accomondationCalculusId",
+      "type": "foreignKey",
+      "table": "accomondationCalculus",
+      "mandatory": true
+    },
+    {
+      "name": "financialInstution",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "loanDescription",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "interestRate",
+      "type": "percentage"
+    },
+    {
+      "name": "monthlyAmortizationSum",
+      "type": "money"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

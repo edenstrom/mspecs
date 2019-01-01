@@ -1,0 +1,69 @@
+{
+  "name": "documents",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "currentVersionId",
+      "type": "foreignKey",
+      "table": "versions"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "preValidationUrl",
+      "type": "text",
+      "maxLength": 400
+    },
+    {
+      "name": "postValidationUrl",
+      "type": "text",
+      "maxLength": 400
+    },
+    {
+      "name": "clonedAssociationDocumentId",
+      "type": "foreignKey",
+      "table": "associationDocuments",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "clonedAssociationVersionId",
+      "type": "foreignKey",
+      "table": "associationVersions",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "versions"
+  ]
+}

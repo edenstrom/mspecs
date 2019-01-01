@@ -1,0 +1,34 @@
+{
+  "name": "dealSignatures",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "contactSigneeId",
+      "type": "foreignKey",
+      "table": "contactSignees"
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "date",
+      "type": "date"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

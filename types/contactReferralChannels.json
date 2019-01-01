@@ -1,0 +1,25 @@
+{
+  "name": "contactReferralChannels",
+  "note": "This table contains through which channel a contact/client gained knowledge about the company. Homepage, add on tv, through a friend, and so on.",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "referralChannel",
+      "type": "text",
+      "maxLength": 100,
+      "mandatory": true
+    },
+    {
+      "name": "isInactive",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

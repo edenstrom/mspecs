@@ -1,0 +1,56 @@
+{
+  "name": "insurances",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "insuranceCompany",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_INSURANCECOMPANY_ANSVAR",
+        "ENUMS_INSURANCECOMPANY_FOLKSAM",
+        "ENUMS_INSURANCECOMPANY_LANSFORSAKRINGAR",
+        "ENUMS_INSURANCECOMPANY_SCANDIA"
+      ]
+    },
+    {
+      "name": "insuranceAmount",
+      "type": "money"
+    },
+    {
+      "name": "insuranceAmountType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_INSURANCEAMOUNTTYPE_AMOUNTS",
+        "ENUMS_INSURANCEAMOUNTTYPE_FULL_VALUE"
+      ]
+    },
+    {
+      "name": "premiumAmount",
+      "type": "money"
+    },
+    {
+      "name": "hasHouseLonghornInsurance",
+      "type": "bit"
+    },
+    {
+      "name": "buyerInsuranceCompany",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_INSURANCECOMPANY_ANSVAR",
+        "ENUMS_INSURANCECOMPANY_FOLKSAM",
+        "ENUMS_INSURANCECOMPANY_LANSFORSAKRINGAR",
+        "ENUMS_INSURANCECOMPANY_SCANDIA"
+      ]
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,35 @@
+{
+  "name": "commissionCuts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "commissionId",
+      "type": "foreignKey",
+      "table": "commissions",
+      "mandatory": true
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "bankAccountId",
+      "type": "foreignKey",
+      "table": "bankAccounts"
+    },
+    {
+      "name": "percentageAmount",
+      "type": "percentage"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

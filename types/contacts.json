@@ -1,0 +1,339 @@
+{
+  "name": "contacts",
+  "preventLocalCopy": true,
+  "hint": {
+    "gdpr": "identifier"
+  },
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "unique": true,
+      "readOnly": true,
+      "note": "userAccount points to a contact and contact points to a userAccount. Two way bind."
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 60,
+      "hint": {
+        "gdpr": "identifier"
+      }
+    },
+    {
+      "name": "extraIdentifier",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "externalIdentifier",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "firstName",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "lastName",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "co",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "gender",
+      "type": "enum",
+      "enums": [
+        "ENUMS_GENDER_WOMAN",
+        "ENUMS_GENDER_MAN",
+        "ENUMS_GENDER_UNDEFINED"
+      ]
+    },
+    {
+      "name": "companyName",
+      "type": "text",
+      "maxLength": 120
+    },
+    {
+      "name": "streetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "postalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "maxLength": 80,
+      "hint": {
+        "gdpr": "identifier"
+      }
+    },
+    {
+      "name": "phoneNumber",
+      "type": "text",
+      "maxLength": 25,
+      "hint": {
+        "gdpr": "identifier"
+      }
+    },
+    {
+      "name": "homePhoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "faxNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "websiteUrl",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "countryId",
+      "type": "foreignKey",
+      "table": "countries",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "registeredResidenceCountryId",
+      "type": "foreignKey",
+      "table": "countries",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "passportNumber",
+      "type": "text",
+      "maxLength": 20,
+      "hint": {
+        "gdpr": "identifier"
+      }
+    },
+    {
+      "name": "birthDate",
+      "type": "date"
+    },
+    {
+      "name": "shouldBeContactedDate",
+      "type": "date",
+      "note": "When the contact should be contacted next"
+    },
+    {
+      "name": "timelinessDate",
+      "type": "date",
+      "note": "When the contact was last contacted"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "isLegalEntity",
+      "type": "bit"
+    },
+    {
+      "name": "profilePictureId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "languageId",
+      "type": "foreignKey",
+      "table": "languages",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "PUL",
+      "type": "bit"
+    },
+    {
+      "name": "initials",
+      "type": "text",
+      "maxLength": 6
+    },
+    {
+      "name": "noCommercialInformation",
+      "type": "bit"
+    },
+    {
+      "name": "fullNameAuthorizedToSignForCompany",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "authorizedToSignForCompanyControlledBy",
+      "type": "enum",
+      "enums": [
+        "ENUMS_CONTACTS_COMPANY_CONTROLLED_BY_EXTRACT_FROM_TRADE_REGISTER",
+        "ENUMS_CONTACTS_COMPANY_CONTROLLED_BY_ANNUAL_GENERAL_MEETING"
+      ]
+    },
+    {
+      "name": "workTitle",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "newDevelopmentDealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "note": "If set, the contact is bound to the deal. And will only be displayed on that deal."
+    },
+    {
+      "name": "housingAssociationId",
+      "type": "foreignKey",
+      "table": "housingAssociations",
+      "note": "If set, the contact is bound to the housingAssociation. And will only be displayed on that housingAssociation."
+    },
+    {
+      "name": "alias",
+      "type": "text",
+      "maxLength": 3,
+      "note": "Only used for contacts that are systemUsers"
+    },
+    {
+      "name": "isExternalContact",
+      "type": "bit"
+    },
+    {
+      "name": "externalId",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "tags",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "ignoreDuplicateCheck",
+      "type": "bit"
+    },
+    {
+      "name": "isDeceased",
+      "type": "bit"
+    },
+    {
+      "name": "hasSecretIdentity",
+      "type": "bit"
+    },
+    {
+      "name": "contactSecretIdentityId",
+      "type": "foreignKey",
+      "table": "contactSecretIdentities"
+    },
+    {
+      "name": "isIdentifierVerified",
+      "type": "bit",
+      "readOnly": true
+    },
+    {
+      "name": "invoiceAddress",
+      "type": "text"
+    },
+    {
+      "name": "gdprForgottenDate",
+      "type": "date"
+    },
+    {
+      "name": "gdprLatestExport",
+      "type": "date"
+    },
+    {
+      "name": "gdprApprovalDate",
+      "type": "date"
+    },
+    {
+      "name": "gdprValidUntil",
+      "type": "date"
+    },
+    {
+      "name": "gdprFlaggedForInvestigationDate",
+      "type": "date"
+    },
+    {
+      "name": "gdprReminderToApproveDate",
+      "type": "date"
+    },
+    {
+      "name": "gdprInformationSendDate",
+      "type": "date"
+    },
+    {
+      "name": "gdprDirectMarketingAllowedUntil",
+      "type": "date"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "contactInformation",
+    "matchings",
+    "buyers",
+    "files",
+    "sellers",
+    "teamRoles",
+    "bankAccounts",
+    "bankAccountRoles",
+    "contactOrganizationUnits"
+  ],
+  "uniqueFields": [
+    [
+      "identifier",
+      "newDevelopmentDealId"
+    ],
+    [
+      "extraIdentifier",
+      "newDevelopmentDealId"
+    ],
+    [
+      "identifier",
+      "housingAssociationId"
+    ],
+    [
+      "extraIdentifier",
+      "housingAssociationId"
+    ]
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "name": "estateTenantsSubObjectTypeEstateCalculations",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates",
+      "mandatory": true
+    },
+    {
+      "name": "estateTenantsSubObjectTypeId",
+      "type": "foreignKey",
+      "table": "estateTenantsSubObjectTypes",
+      "mandatory": true
+    },
+    {
+      "name": "generalizedCost",
+      "type": "money",
+      "note": "cost/m2"
+    },
+    {
+      "name": "generalizedOperationCost",
+      "type": "money",
+      "note": "cost/m2"
+    },
+    {
+      "name": "generalizedMaintenanceCost",
+      "type": "money",
+      "note": "cost/m2"
+    },
+    {
+      "name": "quantity",
+      "type": "tinyint"
+    },
+    {
+      "name": "totalArea",
+      "type": "decimal",
+      "digits": 15,
+      "decimals": 1,
+      "note": "m2"
+    },
+    {
+      "name": "totalRevenue",
+      "type": "money",
+      "note": "SEK/year"
+    },
+    {
+      "name": "totalRevenuePerArea",
+      "type": "money",
+      "note": "SEK/m2"
+    },
+    {
+      "name": "otherRevenues",
+      "type": "money",
+      "note": "SEK/year"
+    },
+    {
+      "name": "otherRevenuesPerArea",
+      "type": "money",
+      "note": "SEK/m2"
+    },
+    {
+      "name": "vacancyQuantity",
+      "type": "tinyint"
+    },
+    {
+      "name": "vacancyTotalArea",
+      "type": "decimal",
+      "digits": 15,
+      "decimals": 1,
+      "note": "m2"
+    },
+    {
+      "name": "vacancyTotalRevenue",
+      "type": "money",
+      "note": "SEK/m2"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "uniqueFields": [
+    [
+      "estateId",
+      "estateTenantsSubObjectTypeId"
+    ]
+  ],
+  "collections": []
+}

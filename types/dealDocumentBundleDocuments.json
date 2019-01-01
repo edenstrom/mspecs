@@ -1,0 +1,49 @@
+{
+  "name": "dealDocumentBundleDocuments",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealDocumentBundleId",
+      "type": "foreignKey",
+      "table": "dealDocumentBundles",
+      "mandatory": true
+    },
+    {
+      "name": "versionId",
+      "type": "foreignKey",
+      "table": "versions"
+    },
+    {
+      "name": "dealUrlId",
+      "type": "foreignKey",
+      "table": "dealUrls"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "copies",
+      "type": "tinyint",
+      "mandatory": true,
+      "default": 1
+    },
+    {
+      "name": "allowSinglePrint",
+      "type": "bit"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

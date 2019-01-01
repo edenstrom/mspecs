@@ -1,0 +1,30 @@
+{
+  "name": "contactSignees",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "signatureText",
+      "type": "text"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "shouldNotSign",
+      "type": "bit"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

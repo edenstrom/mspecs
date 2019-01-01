@@ -1,0 +1,99 @@
+{
+  "name": "customFields",
+  "isConnectionTable": false,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "customFieldsGroupId",
+      "type": "foreignKey",
+      "table": "customFieldsGroups"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "flowStepId",
+      "type": "foreignKey",
+      "table": "flowSteps",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "fieldType",
+      "type": "enum",
+      "mandatory": true,
+      "enums": [
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_TEXT",
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_INTEGER",
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_DECIMAL",
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_BIT",
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_DATETIME",
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_DOCUMENT_BIT",
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_URL",
+        "ENUM_CUSTOM_FIELDS_FIELD_TYPE_LOOKUP"
+      ]
+    },
+    {
+      "name": "isMandatory",
+      "type": "bit"
+    },
+    {
+      "name": "maxLength",
+      "type": "int"
+    },
+    {
+      "name": "decimals",
+      "type": "int"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "isReadOnly",
+      "type": "bit"
+    },
+    {
+      "name": "isNotDisplayed",
+      "type": "bit"
+    },
+    {
+      "name": "tableName",
+      "type": "text",
+      "maxLength": 40,
+      "mandatory": true
+    },
+    {
+      "name": "documentVariableName",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "documentVariableText",
+      "type": "text"
+    },
+    {
+      "name": "lookupURL",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "defaultValue",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

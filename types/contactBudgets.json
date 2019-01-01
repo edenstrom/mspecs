@@ -1,0 +1,43 @@
+{
+  "name": "contactBudgets",
+  "isDeprecated": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "tax",
+      "type": "percentage"
+    },
+    {
+      "name": "monthlySalary",
+      "type": "money"
+    },
+    {
+      "name": "monthlyTaxFreeSalary",
+      "type": "money",
+      "note": "This field will not take in account tax."
+    },
+    {
+      "name": "monthlyExpenses",
+      "type": "money",
+      "note": "Expenses that does not include housing costs"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

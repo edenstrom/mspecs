@@ -1,0 +1,563 @@
+{
+  "name": "buildings",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "parentId",
+      "type": "foreignKey",
+      "table": "buildings",
+      "note": "Is only used in commercial, to connect valuation units to a building"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "areaId",
+      "type": "foreignKey",
+      "table": "areas"
+    },
+    {
+      "name": "estateEconomicTypeCodeId",
+      "type": "foreignKey",
+      "table": "estateEconomicTypeCodes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "externalId",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "assessmentValue",
+      "type": "money"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "classification",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "area",
+      "type": "decimal",
+      "digits": 15,
+      "decimals": 1
+    },
+    {
+      "name": "buildingTypeId",
+      "type": "foreignKey",
+      "table": "buildingTypes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "isImported",
+      "type": "bit"
+    },
+    {
+      "name": "buildYear",
+      "type": "year"
+    },
+    {
+      "name": "buildingType",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "numberOfRooms",
+      "type": "decimal",
+      "digits": 4,
+      "decimals": 1
+    },
+    {
+      "name": "numberOfBedrooms",
+      "type": "int",
+      "maxLength": 3
+    },
+    {
+      "name": "livingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1
+    },
+    {
+      "name": "otherLivingArea",
+      "type": "decimal",
+      "digits": 5,
+      "decimals": 1
+    },
+    {
+      "name": "assessmentValueYear",
+      "type": "year"
+    },
+    {
+      "name": "standardPoints",
+      "type": "int"
+    },
+    {
+      "name": "newRedevelopmentYear",
+      "type": "year"
+    },
+    {
+      "name": "renovateDescription",
+      "type": "text"
+    },
+    {
+      "name": "roomsDescription",
+      "type": "text"
+    },
+    {
+      "name": "subFoundationType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_SUBFOUNDATIONTYPE_TYPE_SAND",
+        "ENUMS_SUBFOUNDATIONTYPE_TYPE_MORAN",
+        "ENUMS_SUBFOUNDATIONTYPE_TYPE_LERA",
+        "ENUMS_SUBFOUNDATIONTYPE_TYPE_STONE"
+      ]
+    },
+    {
+      "name": "foundationType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_FOUNDATIONTYPE_TYPE_TORPARGRUND",
+        "ENUMS_FOUNDATIONTYPE_TYPE_PILES",
+        "ENUMS_FOUNDATIONTYPE_TYPE_BLOCKS",
+        "ENUMS_FOUNDATIONTYPE_TYPE_SLAB_ON_GROUND",
+        "ENUMS_FOUNDATIONTYPE_TYPE_WALLS_OF_ROCK",
+        "ENUMS_FOUNDATIONTYPE_TYPE_LECA-STONE",
+        "ENUMS_FOUNDATIONTYPE_TYPE_CARVED_IN_STONE",
+        "ENUMS_FOUNDATIONTYPE_TYPE_CASTLEROCK",
+        "ENUMS_FOUNDATIONTYPE_TYPE_FOOTINGS",
+        "ENUMS_FOUNDATIONTYPE_TYPE_CONCRETE",
+        "ENUMS_FOUNDATIONTYPE_TYPE_HOLLOW_FOUNDATION"
+      ]
+    },
+    {
+      "name": "roofingType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_ROOFINGTYPE_TYPE_BRICK",
+        "ENUMS_ROOFINGTYPE_TYPE_ROOF",
+        "ENUMS_ROOFINGTYPE_TYPE_TILES",
+        "ENUMS_ROOFINGTYPE_TYPE_SHEET",
+        "ENUMS_ROOFINGTYPE_TYPE_PAPP",
+        "ENUMS_ROOFINGTYPE_TYPE_COPPERPLATE",
+        "ENUMS_ROOFINGTYPE_TYPE_ETERNIT",
+        "ENUMS_ROOFINGTYPE_TYPE_CONCRETE_TILES"
+      ]
+    },
+    {
+      "name": "facadeType",
+      "type": "text",
+      "enums": [
+        "ENUMS_FACADETYPE_TYPE_WOOD",
+        "ENUMS_FACADETYPE_TYPE_BRICK",
+        "ENUMS_FACADETYPE_TYPE_STANDING_PANELED",
+        "ENUMS_FACADETYPE_TYPE_POLISHES",
+        "ENUMS_FACADETYPE_TYPE_MEXISTEN",
+        "ENUMS_FACADETYPE_TYPE_HORIZONTAL_WOOD_PANELING",
+        "ENUMS_FACADETYPE_TYPE_LIMESTONE",
+        "ENUMS_FACADETYPE_TYPE_ETERNIT"
+      ]
+    },
+    {
+      "name": "windowsType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_WINDOWSTYPE_TYPE_SIMPLE_WINDOW",
+        "ENUMS_WINDOWSTYPE_TYPE_PAIRED_WINDOWS_WITH_TRANSOMS",
+        "ENUMS_WINDOWSTYPE_TYPE_PAIRED_WINDOW",
+        "ENUMS_WINDOWSTYPE_TYPE_LIGHTWEIGHT_WINDOWS_WITH_TRANSOMS",
+        "ENUMS_WINDOWSTYPE_TYPE_GLAZED_WINDOWS_WITH_GLAZING_BARS",
+        "ENUMS_WINDOWSTYPE_TYPE_GLAZED",
+        "ENUMS_WINDOWSTYPE_TYPE_3-GLAZED_INSULATING",
+        "ENUMS_WINDOWSTYPE_TYPE_3-GLASS_WINDOWS_WITH_TRANSOMS",
+        "ENUMS_WINDOWSTYPE_TYPE_3-GLASS_WINDOW",
+        "ENUMS_WINDOWSTYPE_TYPE_2-GLAZED_WINDOWS_WITH_TRANSOMS",
+        "ENUMS_WINDOWSTYPE_TYPE_2-GLAZED_INSULATING_(SINGLE)",
+        "ENUMS_WINDOWSTYPE_TYPE_2-GLAZED_INSULATING",
+        "ENUMS_WINDOWSTYPE_TYPE_2-GLASS_WINDOWS"
+      ]
+    },
+    {
+      "name": "joistType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_JOISTTYPE_TYPE_WOOD",
+        "ENUMS_JOISTTYPE_TYPE_LIGHTWEIGHT_CONCRETE",
+        "ENUMS_JOISTTYPE_TYPE_CAST_VAULT",
+        "ENUMS_JOISTTYPE_TYPE_CONCRETE"
+      ]
+    },
+    {
+      "name": "guttersType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_GUTTERSTYPE_TYPE_SHEET",
+        "ENUMS_GUTTERSTYPE_TYPE_PLASTIC",
+        "ENUMS_GUTTERSTYPE_TYPE_COPPER",
+        "ENUMS_GUTTERSTYPE_TYPE_GALVANIZED_SHEET_METAL_UNPAINTED",
+        "ENUMS_GUTTERSTYPE_TYPE_GALVANIZED_PAINTED_PLATE"
+      ]
+    },
+    {
+      "name": "frameType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_FRAMETYPE_TYPE_WOOD",
+        "ENUMS_FRAMETYPE_TYPE_BRICK",
+        "ENUMS_FRAMETYPE_TYPE_STEEL",
+        "ENUMS_FRAMETYPE_TYPE_LIGHTWEIGHT_CONCRETE",
+        "ENUMS_FRAMETYPE_TYPE_CONCRETE"
+      ]
+    },
+    {
+      "name": "buildingComment",
+      "type": "text"
+    },
+    {
+      "name": "waterType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_WATERTYPE_TYPE_WATER_MISSING",
+        "ENUMS_WATERTYPE_TYPE_MUNICIPAL_WATER",
+        "ENUMS_WATERTYPE_TYPE_DUG_WELLS",
+        "ENUMS_WATERTYPE_TYPE_INDIVIDUAL_WATER",
+        "ENUMS_WATERTYPE_TYPE_DEEP_DRILLED_WELL"
+      ]
+    },
+    {
+      "name": "drainType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_DRAINTYPE_TYPE_SANITATION",
+        "ENUMS_DRAINTYPE_TYPE_INDIVIDUAL_SEWAGE",
+        "ENUMS_DRAINTYPE_TYPE_DRAIN_WITH_INFILTRATION",
+        "ENUMS_DRAINTYPE_TYPE_DRAIN_MISSING"
+      ]
+    },
+    {
+      "name": "heatingType",
+      "type": "text",
+      "enums": [
+        "ENUMS_HEATINGTYPE_TYPE_COMBI_BOILER_WITH_WOOD_OR_ELECTRICITY",
+        "ENUMS_HEATINGTYPE_TYPE_COMBI_BOILER_WITH_OIL_OR_ELECTRICITY",
+        "ENUMS_HEATINGTYPE_TYPE_COMBI_BOILER_WITH_OIL_ELECTRICITY_OR_WOOD",
+        "ENUMS_HEATINGTYPE_TYPE_CERAMIC_TILE_FOR_WOOD",
+        "ENUMS_HEATINGTYPE_TYPE_GAS",
+        "ENUMS_HEATINGTYPE_TYPE_GAS_BOILER",
+        "ENUMS_HEATINGTYPE_TYPE_DISTRICT_HEATING",
+        "ENUMS_HEATINGTYPE_TYPE_ELECTRICITY-WATER_HEAT",
+        "ENUMS_HEATINGTYPE_TYPE_EL-AIR_HEATING",
+        "ENUMS_HEATINGTYPE_TYPE_DIRECT_ELECTRIC",
+        "ENUMS_HEATINGTYPE_TYPE_HEAT_PUMP",
+        "ENUMS_HEATINGTYPE_TYPE_FIREWOOD",
+        "ENUMS_HEATINGTYPE_TYPE_OIL-FILLED_ELECTRIC_RADIATORS",
+        "ENUMS_HEATINGTYPE_TYPE_OIL",
+        "ENUMS_HEATINGTYPE_TYPE_PELLET",
+        "ENUMS_HEATINGTYPE_TYPE_WOODBURNER",
+        "ENUMS_HEATINGTYPE_TYPE_HEATPUMP_AIR_TO_AIR",
+        "ENUMS_HEATINGTYPE_TYPE_HEATPUMP_AIR_TO_WATER",
+        "ENUMS_HEATINGTYPE_TYPE_GEOTHERMAL"
+      ],
+      "maxLength": 150
+    },
+    {
+      "name": "heatingPlantAge",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "heatingPlantCondition",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "heatingPlantBrand",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "ventilationType",
+      "type": "text",
+      "maxLength": 40,
+      "enums": [
+        "ENUMS_VENTILATIONTYPE_TYPE_NATURAL_DRAFT",
+        "ENUMS_VENTILATIONTYPE_TYPE_MECHANICAL_SUPPLY_AND_EXHAUST_AIR",
+        "ENUMS_VENTILATIONTYPE_TYPE_MECHANICAL_EXHAUST_AIR"
+      ]
+    },
+    {
+      "name": "ventilationInspectionDate",
+      "type": "date"
+    },
+    {
+      "name": "electricSafety",
+      "type": "text",
+      "maxLength": 50,
+      "enums": [
+        "ENUMS_ELECTRICSAFETY_TYPE_UNEARTHED",
+        "ENUMS_ELECTRICSAFETY_TYPE_GROUNDED",
+        "ENUMS_ELECTRICSAFETY_TYPE_PARTIALLY_GROUNDED"
+      ]
+    },
+    {
+      "name": "electricalStemsCondition",
+      "type": "text",
+      "maxLength": 50,
+      "enums": [
+        "ENUMS_ELECTRICALSTEMSCONDITION_TYPE_WIRES_NOT_EXCHANGED",
+        "ENUMS_ELECTRICALSTEMSCONDITION_TYPE_WIRES_EXCHANGED"
+      ]
+    },
+    {
+      "name": "mainFuse",
+      "type": "text",
+      "maxLength": 10,
+      "enums": [
+        "ENUMS_MAINFUSE_TYPE_25_A",
+        "ENUMS_MAINFUSE_TYPE_20_A",
+        "ENUMS_MAINFUSE_TYPE_16_A",
+        "ENUMS_MAINFUSE_TYPE_10_A"
+      ]
+    },
+    {
+      "name": "electricalComment",
+      "type": "text"
+    },
+    {
+      "name": "chimneyType",
+      "type": "text",
+      "maxLength": 40,
+      "enums": [
+        "ENUMS_CHIMNEYTYPE_TYPE_STACK_OF_PLATES",
+        "ENUMS_CHIMNEYTYPE_TYPE_BRICK_CHIMNEY_WITH_FLUE_LINER",
+        "ENUMS_CHIMNEYTYPE_TYPE_BRICK_CHIMNEY"
+      ]
+    },
+    {
+      "name": "chimneyTestedDate",
+      "type": "date"
+    },
+    {
+      "name": "chimneyComment",
+      "type": "text"
+    },
+    {
+      "name": "hasRadon",
+      "type": "bit"
+    },
+    {
+      "name": "showOnlyCommentInObjectDescription",
+      "type": "bit",
+      "note": "Only used for building type ENUM_BUILDING_TYPE_ECONOMI"
+    },
+    {
+      "name": "showOnlyBuildingCommentInObjectDescription",
+      "type": "bit",
+      "note": "Only used for building type ENUM_BUILDING_TYPE_HOUSE_FARMING"
+    },
+    {
+      "name": "parkingDescription",
+      "type": "text"
+    },
+    {
+      "name": "patioDescription",
+      "type": "text"
+    },
+    {
+      "name": "tvInternetDescription",
+      "type": "text"
+    },
+    {
+      "name": "energyConsumption",
+      "type": "int",
+      "note": "kWh"
+    },
+    {
+      "name": "personsInHousehold",
+      "type": "int"
+    },
+    {
+      "name": "heatingCost",
+      "type": "money"
+    },
+    {
+      "name": "chimneySweepingCost",
+      "type": "money"
+    },
+    {
+      "name": "waterAndDrainFee",
+      "type": "money"
+    },
+    {
+      "name": "sanitationFee",
+      "type": "money"
+    },
+    {
+      "name": "roadFee",
+      "type": "money"
+    },
+    {
+      "name": "communityFee",
+      "type": "money"
+    },
+    {
+      "name": "operatingCostSum",
+      "type": "money"
+    },
+    {
+      "name": "isOperatingCostSumSetManually",
+      "type": "bit"
+    },
+    {
+      "name": "energyClass",
+      "type": "enum",
+      "enums": [
+        "ENUMS_ENERGYCLASS_TYPE_A",
+        "ENUMS_ENERGYCLASS_TYPE_B",
+        "ENUMS_ENERGYCLASS_TYPE_C",
+        "ENUMS_ENERGYCLASS_TYPE_D",
+        "ENUMS_ENERGYCLASS_TYPE_E",
+        "ENUMS_ENERGYCLASS_TYPE_F",
+        "ENUMS_ENERGYCLASS_TYPE_G"
+      ]
+    },
+    {
+      "name": "energyStatus",
+      "type": "enum",
+      "enums": [
+        "ENUMS_EnergyStatus_TYPE_ENERGY_USE_IS_NOT_NEEDED",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_USE_IS_MADE",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_USE_IN_PROGRESS",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_AUDITS_NOT_PERFORMED",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_AUDITS_ARE_COMMISSIONED"
+      ]
+    },
+    {
+      "name": "energyStatusDate",
+      "type": "date"
+    },
+    {
+      "name": "energyPerformance",
+      "type": "int"
+    },
+    {
+      "name": "energyStatusEntrepreneur",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "energyStatusDescription",
+      "type": "text"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "complained",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "waterAndDrainComment",
+      "type": "text"
+    },
+    {
+      "name": "heatingCoolingAndVentilationComment",
+      "type": "text"
+    },
+    {
+      "name": "radonComment",
+      "type": "text"
+    },
+    {
+      "name": "isSanitationMature",
+      "type": "bit",
+      "note": "If set true it means the building will have 10 or less years left before sanitation is required."
+    },
+    {
+      "name": "redevelopmentCost",
+      "type": "money"
+    },
+    {
+      "name": "technicalDescription",
+      "type": "text"
+    },
+    {
+      "name": "livingAreaComment",
+      "type": "text",
+      "maxLength": 150,
+      "enums": [
+        "ENUMS_LIVINGAREACOMMENT_TYPE_NOTE_THAT_THE_EXACT_SIZE_IS_NOT_MEASURED",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_TAX_INFORMATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_OF_THE_SELLER",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_SELLER_AND_HOUSING_ASSOCIATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_DRAWING_(S)",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_MEASURING",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_LANDLORD",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_THE_CONDOMINIUM_ASSOCIATION",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_OF_OWNERS_OF",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_NO_MEASURING",
+        "ENUMS_LIVINGAREACOMMENT_TYPE_AREA_INFORMATION_IN_ACCORDANCE_WITH_LANTMATERIET"
+      ]
+    },
+    {
+      "name": "operatingCostComment",
+      "type": "text"
+    },
+    {
+      "name": "costComment",
+      "type": "text"
+    },
+    {
+      "name": "isCommercialBuilding",
+      "type": "bit",
+      "note": "Only used in commercial. To differ a building from a valuation unit"
+    },
+    {
+      "name": "tax",
+      "type": "money"
+    },
+    {
+      "name": "isPublic",
+      "type": "bit",
+      "default": true,
+      "note": "Only used for farming and commercial buildings. If building should be on webpage"
+    },
+    {
+      "name": "isMarketing",
+      "type": "bit",
+      "default": true,
+      "note": "Used in commercial. If building should be in object description and so forth"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

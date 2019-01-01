@@ -1,0 +1,35 @@
+{
+  "name": "memoPad",
+  "note": "organizationUnitId set=memoPadRow belongs to orgUnit and all under | userAccountId set=personal writing, belongs to userAccount | none set=belongs to organization",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "subject",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,28 @@
+{
+  "name": "rowControllers",
+  "isConnectionTable": false,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "sourceRowId",
+      "type": "foreignKey",
+      "table": "rows",
+      "mandatory": true
+    },
+    {
+      "name": "targetRowId",
+      "type": "foreignKey",
+      "table": "rows",
+      "mandatory": true,
+      "unique": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,241 @@
+{
+  "name": "housingAssociations",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "taxationType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_HOUSING_ASSOCIATION_TAXATION_TYPE_NOT_PRIVATE",
+        "ENUMS_HOUSING_ASSOCIATION_TAXATION_TYPE_PRIVATE"
+      ]
+    },
+    {
+      "name": "housingAssociationType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_HOUSING_ASSOCIATION_TYPE_PROPERTY_COMPANY",
+        "ENUMS_HOUSING_ASSOCIATION_TYPE_PROPERTY_ASSOCIATION",
+        "ENUMS_HOUSING_ASSOCIATION_TYPE_HOUSING_ASSOCIATION"
+      ]
+    },
+    {
+      "name": "contactInformationId",
+      "type": "foreignKey",
+      "table": "contactInformation"
+    },
+    {
+      "name": "foundedYear",
+      "type": "year"
+    },
+    {
+      "name": "numberOfApartments",
+      "type": "int"
+    },
+    {
+      "name": "legalEntityAcceptableSetting",
+      "type": "enum",
+      "enums": [
+        "ENUM_LEGAL_ENTITY_ACCEPTABLE_SETTING_YES",
+        "ENUM_LEGAL_ENTITY_ACCEPTABLE_SETTING_NO",
+        "ENUM_LEGAL_ENTITY_ACCEPTABLE_SETTING_AFTER_CONSIDERATION"
+      ]
+    },
+    {
+      "name": "transferFee",
+      "type": "text",
+      "maxLength": 120
+    },
+    {
+      "name": "transferFeePaidBy",
+      "type": "enum",
+      "enums": [
+        "ENUMS_HOUSING_ASSOCIATION_TRANSFER_FEE_PAID_BY_SELLER",
+        "ENUMS_HOUSING_ASSOCIATION_TRANSFER_FEE_PAID_BY_BUYER",
+        "ENUMS_HOUSING_ASSOCIATION_TRANSFER_FEE_PAID_BY_NO_FEE"
+      ]
+    },
+    {
+      "name": "generalInformation",
+      "type": "text"
+    },
+    {
+      "name": "economy",
+      "type": "text"
+    },
+    {
+      "name": "feeChanges",
+      "type": "text"
+    },
+    {
+      "name": "upcomingRenovations",
+      "type": "text"
+    },
+    {
+      "name": "madeRenovations",
+      "type": "text"
+    },
+    {
+      "name": "businessHours",
+      "type": "text"
+    },
+    {
+      "name": "errors",
+      "type": "text"
+    },
+    {
+      "name": "insurance",
+      "type": "text"
+    },
+    {
+      "name": "other",
+      "type": "text"
+    },
+    {
+      "name": "pledgingFee",
+      "type": "text",
+      "maxLength": 120
+    },
+    {
+      "name": "otherAreasComment",
+      "type": "text"
+    },
+    {
+      "name": "parkingDescription",
+      "type": "text"
+    },
+    {
+      "name": "locationDescription",
+      "type": "text"
+    },
+    {
+      "name": "directions",
+      "type": "text"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "transferRoutine",
+      "type": "text"
+    },
+    {
+      "name": "updatedByContactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "manuallyUpdatedDate",
+      "type": "datetime"
+    },
+    {
+      "name": "websiteURL",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "communications",
+      "type": "text"
+    },
+    {
+      "name": "yearlyRent",
+      "type": "money"
+    },
+    {
+      "name": "loans",
+      "type": "money"
+    },
+    {
+      "name": "loansPerAreaUnit",
+      "type": "money",
+      "note": "Area unit for the moment is m²"
+    },
+    {
+      "name": "plotOwnership",
+      "type": "enum",
+      "enums": [
+        "ENUMS_HOUSING_ASSOCIATION_PLOT_OWNERSHIP_LEASEHOLD",
+        "ENUMS_HOUSING_ASSOCIATION_PLOT_OWNERSHIP_OWNS"
+      ]
+    },
+    {
+      "name": "isCondominiumSupplementIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isHeatIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isWaterIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isElectricityIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isCableTVIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isInternetIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isGarageIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isCarportIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "isParkingSpaceIncluded",
+      "type": "bit"
+    },
+    {
+      "name": "otherFeesIncludedInRent",
+      "type": "text"
+    },
+    {
+      "name": "monthlyRentSummary",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "uniqueFields": [
+    [
+      "identifier",
+      "organizationUnitId"
+    ]
+  ],
+  "collections": [
+    "parkingSpaces",
+    "filesInHousingAssociations",
+    "housingAssociationContacts",
+    "imagesInHousingAssociations"
+  ]
+}

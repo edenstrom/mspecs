@@ -1,0 +1,47 @@
+{
+  "name": "forms",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "version",
+      "type": "text",
+      "maxLength": 10
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "body",
+      "type": "jsonObject"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

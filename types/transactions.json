@@ -1,0 +1,43 @@
+{
+  "name": "transactions",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "transactionGroupId",
+      "type": "foreignKey",
+      "table": "transactionGroups",
+      "mandatory": true
+    },
+    {
+      "name": "bankAccountId",
+      "type": "foreignKey",
+      "table": "bankAccounts"
+    },
+    {
+      "name": "transactionDate",
+      "type": "date"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "comment",
+      "type": "text",
+      "note": "Private comment will not be printed"
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "note": "Public, will be printed"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

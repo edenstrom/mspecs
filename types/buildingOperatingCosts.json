@@ -1,0 +1,25 @@
+{
+  "name": "buildingOperatingCosts",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "buildingId",
+      "type": "foreignKey",
+      "table": "buildings"
+    },
+    {
+      "name": "amountId",
+      "type": "foreignKey",
+      "table": "amounts"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

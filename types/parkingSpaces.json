@@ -1,0 +1,56 @@
+{
+  "name": "parkingSpaces",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "parkingType",
+      "type": "text",
+      "maxLength": 50,
+      "enums": [
+        "ENUMS_PARKINGTYPE_PARKING_SPACE",
+        "ENUMS_PARKINGTYPE_GARAGE",
+        "ENUMS_PARKINGTYPE_CARPORT"
+      ]
+    },
+    {
+      "name": "amount",
+      "type": "int"
+    },
+    {
+      "name": "isIncludedInRent",
+      "type": "bit"
+    },
+    {
+      "name": "hasSeparateQueue",
+      "type": "bit"
+    },
+    {
+      "name": "hasPowerOutlet",
+      "type": "bit"
+    },
+    {
+      "name": "isMandatory",
+      "type": "bit"
+    },
+    {
+      "name": "hasStaticCost",
+      "type": "bit"
+    },
+    {
+      "name": "cost",
+      "type": "money"
+    },
+    {
+      "name": "area",
+      "type": "area"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

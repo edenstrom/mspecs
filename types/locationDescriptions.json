@@ -1,0 +1,36 @@
+{
+  "name": "locationDescriptions",
+  "note": "This table stores location descriptions that can be shared across the organization or per organizationUnit",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": "100",
+      "mandatory": true
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

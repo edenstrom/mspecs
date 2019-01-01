@@ -1,0 +1,54 @@
+{
+  "name": "futureChanges",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "eventTable",
+      "type": "text",
+      "maxLength": 120,
+      "mandatory": true
+    },
+    {
+      "name": "eventId",
+      "type": "genericForeignKey",
+      "tableNameInField": "eventTable",
+      "mandatory": true
+    },
+    {
+      "name": "eventData",
+      "type": "jsonObject"
+    },
+    {
+      "name": "eventType",
+      "type": "enum",
+      "enums": [
+        "ENUM_FUTURE_CHANGES_EVENT_TYPE_CONTACT_ADDRESS_CHANGE"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "triggerDate",
+      "type": "date",
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

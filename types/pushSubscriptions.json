@@ -1,0 +1,51 @@
+{
+  "name": "pushSubscriptions",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "eventUserAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "eventKind",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "eventTable",
+      "type": "text",
+      "maxLength": 120,
+      "mandatory": true
+    },
+    {
+      "name": "eventId",
+      "type": "genericForeignKey",
+      "tableNameInField": "eventTable"
+    },
+    {
+      "name": "eventField",
+      "type": "text",
+      "maxLength": 120
+    },
+    {
+      "name": "rowField",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "pushURL",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

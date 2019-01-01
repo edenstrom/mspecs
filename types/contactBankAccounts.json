@@ -1,0 +1,25 @@
+{
+  "name": "contactBankAccounts",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "bankAccountId",
+      "type": "foreignKey",
+      "table": "bankAccounts"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

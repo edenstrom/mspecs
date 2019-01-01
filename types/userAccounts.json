@@ -1,0 +1,110 @@
+{
+  "name": "userAccounts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "keyField",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "username",
+      "type": "text",
+      "maxLength": 80,
+      "mandatory": true,
+      "unique": true
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "notInDB": true
+    },
+    {
+      "name": "organizationId",
+      "type": "foreignKey",
+      "table": "organizations",
+      "mandatory": true
+    },
+    {
+      "name": "validUntil",
+      "type": "date"
+    },
+    {
+      "name": "languageId",
+      "type": "foreignKey",
+      "table": "languages",
+      "mandatory": true,
+      "default": 1
+    },
+    {
+      "name": "lastLogin",
+      "type": "datetime"
+    },
+    {
+      "name": "timezone",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "Europe/Stockholm",
+        "Europe/Oslo",
+        "Europe/Helsinki",
+        "Europe/Copenhagen"
+      ],
+      "mandatory": true,
+      "default": "Europe/Stockholm"
+    },
+    {
+      "name": "googleOauthToken",
+      "type": "text"
+    },
+    {
+      "name": "office365OauthToken",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "dealId",
+      "type": "keyField",
+      "table": "deals",
+      "note": "This deal is used for personal service orders and deliveries"
+    },
+    {
+      "name": "claimedIdentifier",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "emailSignature",
+      "type": "text"
+    },
+    {
+      "name": "letterSignature",
+      "type": "text"
+    },
+    {
+      "name": "passwordSetDate",
+      "type": "date",
+      "readOnly": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "accessRights"
+  ],
+  "uniqueFields": [
+    [
+      "contactId",
+      "organizationId"
+    ]
+  ]
+}

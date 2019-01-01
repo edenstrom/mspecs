@@ -1,0 +1,29 @@
+{
+  "name": "roomTypeAppliances",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "roomTypeId",
+      "type": "foreignKey",
+      "table": "roomTypes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "isActive",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,17 @@
+export const brokenCollections = [
+  'children',
+  'signees',
+  'receipts',
+  'letterTemplates',
+  'categories',
+  'accessRights',
+  'objectTypes',
+  'files',
+  'rows',
+  'contactInformation',
+  'bankAccounts',
+  'parkingSpaces',
+  'matchings',
+  'farmingPurposes',
+  'matchingAttributes',
+];

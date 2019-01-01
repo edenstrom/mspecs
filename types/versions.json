@@ -1,0 +1,88 @@
+{
+  "name": "versions",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "associationDocumentId",
+      "type": "foreignKey",
+      "table": "associationDocuments",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "documentId",
+      "type": "foreignKey",
+      "table": "documents"
+    },
+    {
+      "name": "publishedDate",
+      "type": "datetime"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "associationParentVersionId",
+      "type": "foreignKey",
+      "table": "associationVersions",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "parentVersionId",
+      "type": "foreignKey",
+      "table": "versions"
+    },
+    {
+      "name": "displayOrderId",
+      "type": "foreignKey",
+      "table": "displayOrders"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "areRowsCopied",
+      "type": "bit"
+    },
+    {
+      "name": "isBundleItem",
+      "type": "bit"
+    },
+    {
+      "name": "printTitle",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "settingsJSON",
+      "type": "jsonObject"
+    },
+    {
+      "name": "issuingInformation",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "rows"
+  ]
+}

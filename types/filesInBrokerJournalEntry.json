@@ -1,0 +1,25 @@
+{
+  "name": "filesInBrokerJournalEntry",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "brokerJournalEntryId",
+      "type": "foreignKey",
+      "table": "brokerJournalEntries"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

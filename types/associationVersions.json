@@ -1,0 +1,61 @@
+{
+  "name": "associationVersions",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "associationDocumentId",
+      "type": "foreignKey",
+      "table": "associationDocuments"
+    },
+    {
+      "name": "associationDisplayOrderId",
+      "type": "foreignKey",
+      "table": "associationDisplayOrders"
+    },
+    {
+      "name": "publishedDate",
+      "type": "datetime"
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "areRowsCopied",
+      "type": "bit"
+    },
+    {
+      "name": "printTitle",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "changelog",
+      "type": "text"
+    },
+    {
+      "name": "settingsJSON",
+      "type": "jsonObject"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "rows"
+  ]
+}

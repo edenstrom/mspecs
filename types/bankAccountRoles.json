@@ -1,0 +1,40 @@
+{
+  "name": "bankAccountRoles",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "bankAccountId",
+      "type": "foreignKey",
+      "table": "bankAccounts",
+      "mandatory": true
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "role",
+      "type": "enum",
+      "enums": [
+        "BANK_ACCOUNT_ROLE_CLIENT_ACCOUNT",
+        "BANK_ACCOUNT_ROLE_BROKER_ACCOUNT"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "isPrimaryBankAccount",
+      "type": "bit",
+      "note": "For now, only used to specify which account that should be used in documents."
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

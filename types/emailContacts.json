@@ -1,0 +1,39 @@
+{
+  "name": "emailContacts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "emailId",
+      "type": "foreignKey",
+      "table": "emails",
+      "mandatory": true
+    },
+    {
+      "name": "contactType",
+      "type": "enum",
+      "enums": [
+        "ENUM_EMAIL_CONTACTS_CONTACT_TYPE_CC",
+        "ENUM_EMAIL_CONTACTS_CONTACT_TYPE_BCC"
+      ]
+    },
+    {
+      "name": "sentToEmailAddress",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

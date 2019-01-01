@@ -1,0 +1,75 @@
+{
+  "name": "buyerInterestInformation",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "queueDate",
+      "type": "datetime"
+    },
+    {
+      "name": "queueNumber",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "interested",
+      "type": "bit"
+    },
+    {
+      "name": "retrievedBrochure",
+      "type": "bit"
+    },
+    {
+      "name": "attendingMeeting",
+      "type": "bit"
+    },
+    {
+      "name": "attendedViewing",
+      "type": "bit"
+    },
+    {
+      "name": "signedBooking",
+      "type": "bit"
+    },
+    {
+      "name": "clearanceFinished",
+      "type": "bit"
+    },
+    {
+      "name": "contacted",
+      "type": "bit"
+    },
+    {
+      "name": "retrievedObjectDescription",
+      "type": "bit"
+    },
+    {
+      "name": "signedContract",
+      "type": "bit"
+    },
+    {
+      "name": "number",
+      "type": "int"
+    },
+    {
+      "name": "latestContactDate",
+      "type": "date"
+    },
+    {
+      "name": "nextContactDate",
+      "type": "date"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

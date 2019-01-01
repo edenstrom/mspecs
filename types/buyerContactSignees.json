@@ -1,0 +1,25 @@
+{
+  "name": "buyerContactSignees",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactSigneeId",
+      "type": "foreignKey",
+      "table": "contactSignees"
+    },
+    {
+      "name": "buyerId",
+      "type": "foreignKey",
+      "table": "buyers"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

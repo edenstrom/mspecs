@@ -1,0 +1,49 @@
+{
+  "name": "dealMarketingPlaces",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "marketingPlace",
+      "type": "enum",
+      "enums": [
+        "ENUM_MARKETING_PLACES_HEMNET",
+        "ENUM_MARKETING_PLACES_OBJEKT_VISION",
+        "ENUM_MARKETING_PLACES_BLOCKET",
+        "ENUM_MARKETING_PLACES_WEBSITE",
+        "ENUM_MARKETING_PLACES_HITTA_HEM",
+        "ENUM_MARKETING_PLACES_BOVISION",
+        "ENUM_MARKETING_PLACES_SWEDENESTATES",
+        "ENUM_MARKETING_PLACES_BOOLI"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp",
+      "note": "Date first published"
+    },
+    {
+      "name": "unpublishedDate",
+      "type": "datetime",
+      "note": "If null its still published, if set. Its the last time it was unpublished"
+    },
+    {
+      "name": "updatedOnMarketingPlaceDate",
+      "type": "datetime"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

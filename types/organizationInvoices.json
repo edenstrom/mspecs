@@ -1,0 +1,20 @@
+{
+  "name": "organizationInvoices",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "invoiceId",
+      "type": "foreignKey",
+      "table": "invoices",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

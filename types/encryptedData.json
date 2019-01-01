@@ -1,0 +1,38 @@
+{
+  "name": "encryptedData",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "targetTable",
+      "type": "text",
+      "maxLength": 120,
+      "mandatory": true
+    },
+    {
+      "name": "targetId",
+      "type": "genericForeignKey",
+      "tableNameInField": "tableName",
+      "mandatory": true
+    },
+    {
+      "name": "encryptedFields",
+      "type": "jsonObject"
+    },
+    {
+      "name": "encryptedData",
+      "type": "text"
+    },
+    {
+      "name": "encryptedMetaData",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

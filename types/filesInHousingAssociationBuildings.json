@@ -1,0 +1,27 @@
+{
+  "name": "filesInHousingAssociationBuildings",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files",
+      "mandatory": true
+    },
+    {
+      "name": "housingAssociationBuildingId",
+      "type": "foreignKey",
+      "table": "housingAssociationBuildings",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

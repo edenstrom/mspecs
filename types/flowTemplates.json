@@ -1,0 +1,24 @@
+{
+  "name": "flowTemplates",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "startFlowStepId",
+      "type": "foreignKey",
+      "table": "flowSteps"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

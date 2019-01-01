@@ -1,0 +1,36 @@
+{
+  "name": "matchingHistory",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "matchingId",
+      "type": "foreignKey",
+      "table": "matchings",
+      "mandatory": true
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "communicationMethod",
+      "type": "enum",
+      "enums": [
+        "ENUMS_MATCHING_HISTORY_COMMUNICATION_METHOD_EMAIL",
+        "ENUMS_MATCHING_HISTORY_COMMUNICATION_METHOD_SMS",
+        "ENUMS_MATCHING_HISTORY_COMMUNICATION_METHOD_MAIL"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

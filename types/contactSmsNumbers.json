@@ -1,0 +1,37 @@
+{
+  "name": "contactSmsNumbers",
+  "note": "Numbers that broker are allowed to send SMS from",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "phoneNumber",
+      "type": "text",
+      "maxLength": 25,
+      "mandatory": true
+    },
+    {
+      "name": "startDate",
+      "type": "date",
+      "readOnly": true
+    },
+    {
+      "name": "endDate",
+      "type": "date",
+      "readOnly": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,27 @@
+{
+  "name": "countries",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "isoCode",
+      "type": "text",
+      "maxLength": 2,
+      "mandatory": true,
+      "note": "ISO 3166"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

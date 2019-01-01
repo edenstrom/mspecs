@@ -1,0 +1,25 @@
+{
+  "name": "dealCashDefinitiveStatementAmounts",
+  "note": "Seller credit is saved as positive(+) and Buyer credit is saved negative(-)",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "amountId",
+      "type": "foreignKey",
+      "table": "amounts"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

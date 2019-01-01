@@ -1,0 +1,25 @@
+{
+  "name": "estateTenantsObjectTypesStatus",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "estateTenantsObjectTypeId",
+      "type": "foreignKey",
+      "table": "estateTenantsObjectTypes",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

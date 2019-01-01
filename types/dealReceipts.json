@@ -1,0 +1,95 @@
+{
+  "name": "dealReceipts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateDisplayName",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "number",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "payer",
+      "type": "text",
+      "maxLength": 200,
+      "note": "The person or organization that paid the money the receipt describes"
+    },
+    {
+      "name": "recipientContactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "note": "If both recipient and recipientContactId is set then contactId will be used"
+    },
+    {
+      "name": "recipient",
+      "type": "text",
+      "note": "If both recipient and recipientContactId is set then contactId will be used"
+    },
+    {
+      "name": "type",
+      "type": "enum",
+      "enums": [
+        "ENUM_RECEIPT_TYPE_GENERAL",
+        "ENUM_RECEIPT_TYPE_DOWNPAYMENT",
+        "ENUM_RECEIPT_TYPE_REPORTING_OF_DEPOSIT_DOWN_PAYMENT",
+        "ENUM_RECEIPT_TYPE_COMMISSION"
+      ]
+    },
+    {
+      "name": "signeeContactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "otherSignee",
+      "type": "text"
+    },
+    {
+      "name": "hideSignees",
+      "type": "bit"
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "date",
+      "type": "date"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "hideVATCalculation",
+      "type": "bit"
+    },
+    {
+      "name": "signeeCompanyDescription",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

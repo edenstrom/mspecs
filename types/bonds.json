@@ -1,0 +1,27 @@
+{
+  "name": "bonds",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates",
+      "mandatory": true
+    },
+    {
+      "name": "amountId",
+      "type": "foreignKey",
+      "table": "amounts",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

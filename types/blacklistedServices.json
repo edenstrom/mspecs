@@ -1,0 +1,28 @@
+{
+  "name": "blacklistedServices",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "serviceId",
+      "type": "foreignKey",
+      "table": "services",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

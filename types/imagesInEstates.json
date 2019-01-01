@@ -1,0 +1,39 @@
+{
+  "name": "imagesInEstates",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "category",
+      "type": "enum",
+      "enums": [
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_EXTERIOR",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_INTERNAL",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_FLOOR_PLAN",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_MAP",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_RESIDENTAL_BUILDING",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_ECONOMI_BUILDING",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_FOREST_AND_LAND",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_DIRECTIONS",
+        "ENUMS_IMAGES_IN_ESTATES_CATEGORY_OTHER"
+      ]
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

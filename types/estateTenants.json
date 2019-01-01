@@ -1,0 +1,175 @@
+{
+  "name": "estateTenants",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates",
+      "mandatory": true
+    },
+    {
+      "name": "estateTenantsObjectTypeId",
+      "type": "foreignKey",
+      "table": "estateTenantsObjectTypes",
+      "mandatory": true
+    },
+    {
+      "name": "estateTenantsSubObjectTypeId",
+      "type": "foreignKey",
+      "table": "estateTenantsSubObjectTypes"
+    },
+    {
+      "name": "status",
+      "type": "foreignKey",
+      "table": "estateTenantsObjectTypesStatus"
+    },
+    {
+      "name": "buildingId",
+      "type": "foreignKey",
+      "table": "buildings"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "contractNr",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "contractEndDate",
+      "type": "date"
+    },
+    {
+      "name": "noticePeriod",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "prolongation",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "apartmentNumber",
+      "type": "text",
+      "maxLength": 10
+    },
+    {
+      "name": "governmentApartmentNumber",
+      "type": "text",
+      "maxLength": 10
+    },
+    {
+      "name": "floorNumber",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "area",
+      "type": "decimal",
+      "digits": 6,
+      "decimals": 1
+    },
+    {
+      "name": "livingArea",
+      "type": "decimal",
+      "digits": 6,
+      "decimals": 1
+    },
+    {
+      "name": "otherLivingArea",
+      "type": "decimal",
+      "digits": 6,
+      "decimals": 1
+    },
+    {
+      "name": "numberOfRooms",
+      "type": "decimal",
+      "digits": 4,
+      "decimals": 1
+    },
+    {
+      "name": "rent",
+      "type": "money",
+      "note": "yearly"
+    },
+    {
+      "name": "income",
+      "type": "money",
+      "note": "yearly"
+    },
+    {
+      "name": "incomePerArea",
+      "type": "money",
+      "note": "yearly, area = m²"
+    },
+    {
+      "name": "isIncomeApproximate",
+      "type": "bit"
+    },
+    {
+      "name": "isHeatIncludedInRent",
+      "type": "bit"
+    },
+    {
+      "name": "isWaterIncludedInRent",
+      "type": "bit"
+    },
+    {
+      "name": "isElectricityIncludedInRent",
+      "type": "bit"
+    },
+    {
+      "name": "yearlyIndexIncrease",
+      "type": "percentage"
+    },
+    {
+      "name": "isTax",
+      "type": "bit"
+    },
+    {
+      "name": "otherFeesIncludedInRent",
+      "type": "text",
+      "maxLength": 150
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "vatSettings",
+      "type": "text",
+      "maxLength": 200,
+      "enums": [
+        "ENUM_ESTATE_TENANTS_VAT_SETTINGS_INCLUDED",
+        "ENUM_ESTATE_TENANTS_VAT_SETTINGS_NOT_INCLUDED"
+      ]
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "rentIndex",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

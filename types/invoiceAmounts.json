@@ -1,0 +1,30 @@
+{
+  "name": "invoiceAmounts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "amountId",
+      "type": "foreignKey",
+      "table": "amounts",
+      "note": "Saved without VAT."
+    },
+    {
+      "name": "invoiceId",
+      "type": "foreignKey",
+      "table": "invoices",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

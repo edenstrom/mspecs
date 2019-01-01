@@ -1,0 +1,37 @@
+{
+  "name": "eventGenericConnection",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "eventId",
+      "type": "foreignKey",
+      "table": "events",
+      "mandatory": true
+    },
+    {
+      "name": "targetId",
+      "type": "genericForeignKey",
+      "tableNameInField": "tableName",
+      "mandatory": true
+    },
+    {
+      "name": "tableName",
+      "type": "text",
+      "maxLength": 40,
+      "mandatory": true
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "note": "uniq text to differ between fields that used in tables (accessDate, contractDate, etc."
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

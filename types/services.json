@@ -1,0 +1,108 @@
+{
+  "name": "services",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "providerId",
+      "type": "foreignKey",
+      "table": "providers",
+      "mandatory": true
+    },
+    {
+      "name": "header",
+      "type": "text"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 60,
+      "unique": true
+    },
+    {
+      "name": "descriptionURI",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "orderURI",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Url of the service when a user orders, add %s to the URL where the servicetoken should be placed, e.g https://test.company.com/mspecsorder/%s/stuff"
+    },
+    {
+      "name": "editOrderURI",
+      "type": "text",
+      "maxLength": 200,
+      "note": "Url when user wants to edit the order, same structure as in orderURI"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit",
+      "note": "Will not be listed anywhere, except in edit services"
+    },
+    {
+      "name": "isPrivate",
+      "type": "bit",
+      "note": "If true, the service will only be showed for the provider"
+    },
+    {
+      "name": "cost",
+      "type": "money"
+    },
+    {
+      "name": "costCurrencyId",
+      "type": "foreignKey",
+      "table": "currencies",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "costDescription",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "isSystemService",
+      "type": "bit"
+    },
+    {
+      "name": "presentation",
+      "type": "enum",
+      "enums": [
+        "ENUMS_SERVICE_PRESENTATION_FRAMED",
+        "ENUMS_SERVICE_PRESENTATION_STANDALONE",
+        "ENUMS_SERVICE_PRESENTATION_EMAIL"
+      ]
+    },
+    {
+      "name": "emailSubject",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "emailTo",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "emailCc",
+      "type": "text",
+      "maxLength": 200
+    },
+    {
+      "name": "emailBody",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

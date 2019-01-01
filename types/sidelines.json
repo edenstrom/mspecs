@@ -1,0 +1,32 @@
+{
+  "name": "sidelines",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "partner",
+      "type": "text",
+      "maxLength": 200,
+      "mandatory": true
+    },
+    {
+      "name": "businessDescription",
+      "type": "text"
+    },
+    {
+      "name": "compensationDescription",
+      "type": "text"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

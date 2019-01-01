@@ -1,0 +1,46 @@
+{
+  "name": "estateTenantsExtras",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateTenantId",
+      "type": "foreignKey",
+      "table": "estateTenants",
+      "mandatory": true
+    },
+    {
+      "name": "title",
+      "type": "text",
+      "maxLength": 80,
+      "enums": [
+        "ESTATE_TENANT_EXTRAS_TITLE_HEAT",
+        "ESTATE_TENANT_EXTRAS_TITLE_COOL",
+        "ESTATE_TENANT_EXTRAS_TITLE_ELECTRICITY",
+        "ESTATE_TENANT_EXTRAS_TITLE_WATER",
+        "ESTATE_TENANT_EXTRAS_TITLE_TAX"
+      ]
+    },
+    {
+      "name": "cost",
+      "type": "money",
+      "note": "yearly"
+    },
+    {
+      "name": "costPerArea",
+      "type": "money",
+      "note": "yearly, area = m²"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

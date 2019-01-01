@@ -1,0 +1,118 @@
+{
+  "name": "invoices",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "referenceContactId",
+      "type": "foreignKey",
+      "table": "contacts"
+    },
+    {
+      "name": "recipientContactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "note": "If both recipient and recipientContactId is set then contactId will be used"
+    },
+    {
+      "name": "recipient",
+      "type": "text",
+      "note": "If both recipient and recipientContactId is set then contactId will be used"
+    },
+    {
+      "name": "number",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "penaltyInterest",
+      "type": "percentage"
+    },
+    {
+      "name": "date",
+      "type": "date",
+      "mandatory": true
+    },
+    {
+      "name": "dueDate",
+      "type": "date"
+    },
+    {
+      "name": "information",
+      "type": "text"
+    },
+    {
+      "name": "comment",
+      "type": "text",
+      "note": "Private text that will not be on invoice."
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "note": "Will appear at the end of the invoice."
+    },
+    {
+      "name": "isPaid",
+      "type": "bit"
+    },
+    {
+      "name": "includeEstateAddress",
+      "type": "bit"
+    },
+    {
+      "name": "hideCommunicationToken",
+      "type": "bit",
+      "note": "Only in use when deal invoice, if false we will print deal token AAA BBB if true we will not print"
+    },
+    {
+      "name": "paidDate",
+      "type": "date"
+    },
+    {
+      "name": "vatPercentage",
+      "type": "percentage"
+    },
+    {
+      "name": "plusgiroNumber",
+      "type": "text",
+      "maxLength": 15
+    },
+    {
+      "name": "bankgiroNumber",
+      "type": "text",
+      "maxLength": 15
+    },
+    {
+      "name": "period",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "invoiceTermsOfPayment",
+      "type": "text"
+    },
+    {
+      "name": "currencyId",
+      "type": "foreignKey",
+      "table": "currencies",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

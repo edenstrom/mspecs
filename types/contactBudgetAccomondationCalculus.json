@@ -1,0 +1,28 @@
+{
+  "name": "contactBudgetAccomondationCalculus",
+  "isConnectionTable": true,
+  "isDeprecated": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "accomondationCalculusId",
+      "type": "foreignKey",
+      "table": "accomondationCalculus",
+      "mandatory": true
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

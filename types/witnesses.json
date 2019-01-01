@@ -1,0 +1,26 @@
+{
+  "name": "witnesses",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "signatureId",
+      "type": "foreignKey",
+      "table": "signatures",
+      "mandatory": true
+    },
+    {
+      "name": "witnessSignatureId",
+      "type": "foreignKey",
+      "table": "signatures",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

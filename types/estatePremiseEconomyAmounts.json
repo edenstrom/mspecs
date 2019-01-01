@@ -1,0 +1,28 @@
+{
+  "name": "estatePremiseEconomyAmounts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "amountId",
+      "type": "foreignKey",
+      "table": "amounts"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "costPerArea",
+      "type": "money"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

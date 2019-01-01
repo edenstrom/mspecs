@@ -1,0 +1,60 @@
+{
+  "name": "patios",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "patioType",
+      "type": "text",
+      "maxLength": 100,
+      "enums": [
+        "ENUMS_PATIOTYPE_PATIO",
+        "ENUMS_PATIOTYPE_TERRACE",
+        "ENUMS_PATIOTYPE_BALCONY",
+        "ENUMS_PATIOTYPE_ALTAN"
+      ]
+    },
+    {
+      "name": "isGlasCovered",
+      "type": "bit"
+    },
+    {
+      "name": "direction",
+      "type": "enum",
+      "enums": [
+        "ENUMS_DIRECTION_EAST",
+        "ENUMS_DIRECTION_WEST",
+        "ENUMS_DIRECTION_SOUTH",
+        "ENUMS_DIRECTION_SOUTHWEST",
+        "ENUMS_DIRECTION_SOUTHEAST",
+        "ENUMS_DIRECTION_NORTH",
+        "ENUMS_DIRECTION_NORTHWEST",
+        "ENUMS_DIRECTION_NORTHEAST"
+      ]
+    },
+    {
+      "name": "area",
+      "type": "area"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

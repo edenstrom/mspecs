@@ -1,0 +1,27 @@
+{
+  "name": "matchingGeographicalAreas",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "matchingId",
+      "type": "foreignKey",
+      "table": "matchings",
+      "mandatory": true
+    },
+    {
+      "name": "geographicalAreaId",
+      "type": "foreignKey",
+      "table": "geographicalAreas",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

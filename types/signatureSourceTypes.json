@@ -1,0 +1,48 @@
+{
+  "name": "signatureSourceTypes",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "signatureId",
+      "type": "foreignKey",
+      "table": "signatures",
+      "mandatory": true
+    },
+    {
+      "name": "sourceType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_SOURCE_TYPE_BIDDING_LIST",
+        "ENUMS_SOURCE_TYPE_CDS",
+        "ENUMS_SOURCE_TYPE_VERSION",
+        "ENUMS_SOURCE_TYPE_BROKER_JOURNAL",
+        "ENUMS_SOURCE_TYPE_OBJECT_DESCRIPTION"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "tableId",
+      "type": "genericForeignKey",
+      "tableNameInField": "tableName",
+      "mandatory": true
+    },
+    {
+      "name": "tableName",
+      "type": "text",
+      "mandatory": true
+    },
+    {
+      "name": "contactSignatureId",
+      "type": "foreignKey",
+      "table": "contactSignatures"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

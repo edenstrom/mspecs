@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "declarationDir": "dist",
+    "outDir": "dist",
+    "target": "es5",
+    "lib": ["es2015", "es2016", "es2017", "es2018", "dom"],
+    "rootDir": "src",
+    "downlevelIteration": true
+  },
+  "include": ["./src/*"]
+}

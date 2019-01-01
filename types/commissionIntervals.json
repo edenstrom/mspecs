@@ -1,0 +1,31 @@
+{
+  "name": "commissionIntervals",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "commissionId",
+      "type": "foreignKey",
+      "table": "commissions"
+    },
+    {
+      "name": "percentage",
+      "type": "percentage"
+    },
+    {
+      "name": "lowerBound",
+      "type": "money"
+    },
+    {
+      "name": "upperBound",
+      "type": "money"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

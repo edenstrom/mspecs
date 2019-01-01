@@ -1,0 +1,27 @@
+{
+  "name": "buyerDealSignatures",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealSignatureId",
+      "type": "foreignKey",
+      "table": "dealSignatures",
+      "mandatory": true
+    },
+    {
+      "name": "buyerId",
+      "type": "foreignKey",
+      "table": "buyers",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

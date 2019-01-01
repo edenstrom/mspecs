@@ -1,0 +1,42 @@
+{
+  "name": "viewingAttendees",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "viewingId",
+      "type": "foreignKey",
+      "table": "viewings",
+      "mandatory": true
+    },
+    {
+      "name": "firstName",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "lastName",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "phoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

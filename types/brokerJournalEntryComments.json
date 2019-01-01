@@ -1,0 +1,27 @@
+{
+  "name": "brokerJournalEntryComments",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "commentId",
+      "type": "foreignKey",
+      "table": "comments",
+      "mandatory": true
+    },
+    {
+      "name": "brokerJournalEntryId",
+      "type": "foreignKey",
+      "table": "brokerJournalEntries",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

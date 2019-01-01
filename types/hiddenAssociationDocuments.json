@@ -1,0 +1,20 @@
+{
+  "name": "hiddenAssociationDocuments",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "associationDocumentId",
+      "type": "foreignKey",
+      "table": "associationDocuments",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

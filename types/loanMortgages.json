@@ -1,0 +1,25 @@
+{
+  "name": "loanMortgages",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "loanId",
+      "type": "foreignKey",
+      "table": "loans"
+    },
+    {
+      "name": "mortgageId",
+      "type": "foreignKey",
+      "table": "mortgages"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

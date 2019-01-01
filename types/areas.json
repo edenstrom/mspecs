@@ -1,0 +1,140 @@
+{
+  "name": "areas",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "parentId",
+      "type": "foreignKey",
+      "table": "areas",
+      "note": "Is only used in commercial, to connect valuation units to an area"
+    },
+    {
+      "name": "estateId",
+      "type": "foreignKey",
+      "table": "estates"
+    },
+    {
+      "name": "estateEconomicTypeCodeId",
+      "type": "foreignKey",
+      "table": "estateEconomicTypeCodes",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "externalId",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "value",
+      "type": "money"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "area",
+      "type": "decimal",
+      "digits": 15,
+      "decimals": 1
+    },
+    {
+      "name": "type",
+      "type": "enum",
+      "enums": [
+        "ENUM_AREA_TYPE_FIELD",
+        "ENUM_AREA_TYPE_OTHER",
+        "ENUM_AREA_TYPE_CROPS",
+        "ENUM_AREA_TYPE_FISHING",
+        "ENUM_AREA_TYPE_RENTAL_HOUSING",
+        "ENUM_AREA_TYPE_RENTAL_PREMISES",
+        "ENUM_AREA_TYPE_IMPEDIMENT",
+        "ENUM_AREA_TYPE_INDUSTRIAL",
+        "ENUM_AREA_TYPE_INFIELDS",
+        "ENUM_AREA_TYPE_HUNTING_GROUND",
+        "ENUM_AREA_TYPE_POWERPLANT",
+        "ENUM_AREA_TYPE_WATERPOWER",
+        "ENUM_AREA_TYPE_FOREST",
+        "ENUM_AREA_TYPE_FOREST_WITH_RESTRICTIONS",
+        "ENUM_AREA_TYPE_IMPEDIMENT_FORREST",
+        "ENUM_AREA_TYPE_HOUSING",
+        "ENUM_AREA_TYPE_FARMING_HOUSE",
+        "ENUM_AREA_TYPE_EXTRACTION",
+        "ENUM_AREA_TYPE_WATER",
+        "ENUM_AREA_TYPE_PLOT",
+        "ENUM_AREA_TYPE_MIRE_MARCH_BOG",
+        "ENUM_AREA_TYPE_MOUNTAIN_ROCKY_GROUND",
+        "ENUM_AREA_TYPE_ROAD_AND_POWER_LINE"
+      ]
+    },
+    {
+      "name": "overallType",
+      "type": "text",
+      "enums": [
+        "ENUM_AREA_OVERALL_TYPE_AREA_UNDER_LAND_REGISTER",
+        "ENUM_AREA_OVERALL_TYPE_AREA_FORESTRY_PLAN",
+        "ENUM_AREA_OVERALL_TYPE_AREA_PLAN_ON_PROPERTY_MAP",
+        "ENUM_AREA_OVERALL_TYPE_AREA_SAM_APPLICATION",
+        "ENUM_AREA_OVERALL_TYPE_AREA_TAXABLE_AREA",
+        "ENUM_AREA_OVERALL_TYPE_AREA_SELLERS_DATA"
+      ],
+      "maxLength": 200
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "isImported",
+      "type": "bit"
+    },
+    {
+      "name": "isPublished",
+      "type": "bit"
+    },
+    {
+      "name": "isMarketing",
+      "type": "bit",
+      "note": "Used in commercial. If area should be in object description and so forth"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "buildingRightArea",
+      "type": "decimal",
+      "digits": 15,
+      "decimals": 1,
+      "note": "How many kvm that are allowed above ground"
+    },
+    {
+      "name": "isCommercialArea",
+      "type": "bit",
+      "note": "Only used in commercial. To differ an area from a valuation unit"
+    },
+    {
+      "name": "tax",
+      "type": "money"
+    },
+    {
+      "name": "isTaxable",
+      "type": "bit",
+      "note": "Not in use yet"
+    },
+    {
+      "name": "valueYear",
+      "type": "year",
+      "note": "Not in use yet"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

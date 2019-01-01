@@ -1,0 +1,44 @@
+{
+  "name": "contactLogs",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "event",
+      "type": "enum",
+      "enums": [
+        "ENUM_CONTACT_LOG_EVENT_BANKID_IDENTIFIER_VALIDATION_REQUEST_SENT",
+        "ENUM_CONTACT_LOG_EVENT_BANKID_IDENTIFIER_VALIDATED",
+        "ENUM_CONTACT_LOG_EVENT_IDENTIFIER_VALIDATION_REVOKED"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,24 @@
+{
+  "name": "newDevelopmentDeals",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "projectDealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

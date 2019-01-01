@@ -1,0 +1,30 @@
+{
+  "name": "sellerDealSignatures",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "dealSignatureId",
+      "type": "foreignKey",
+      "table": "dealSignatures",
+      "mandatory": true
+    },
+    {
+      "name": "sellerId",
+      "type": "foreignKey",
+      "table": "sellers",
+      "mandatory": true
+    },
+    {
+      "name": "isSpouseSignature",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

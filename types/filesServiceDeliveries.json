@@ -1,0 +1,25 @@
+{
+  "name": "filesServiceDeliveries",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "serviceDeliveryId",
+      "type": "foreignKey",
+      "table": "serviceDeliveries"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

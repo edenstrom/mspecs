@@ -1,0 +1,28 @@
+{
+  "name": "blacklistedProviders",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "providerId",
+      "type": "foreignKey",
+      "table": "providers",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

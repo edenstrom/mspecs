@@ -1,0 +1,28 @@
+{
+  "name": "gdprDataRequest",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "identifier",
+      "type": "jsonObject",
+      "mandatory": true
+    },
+    {
+      "name": "latestDataRequestDate",
+      "type": "date",
+      "mandatory": true
+    },
+    {
+      "name": "latestDataDeliveryDate",
+      "type": "date"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

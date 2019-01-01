@@ -1,0 +1,55 @@
+{
+  "name": "rows",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "versionId",
+      "type": "foreignKey",
+      "table": "versions",
+      "mandatory": true
+    },
+    {
+      "name": "displayOrder",
+      "type": "int",
+      "mandatory": true
+    },
+    {
+      "name": "header",
+      "type": "text"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "dependency",
+      "type": "text"
+    },
+    {
+      "name": "isHidden",
+      "type": "bit"
+    },
+    {
+      "name": "hasParagraphNumber",
+      "type": "bit"
+    },
+    {
+      "name": "startsNewPage",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "uniqueFields": [
+    [
+      "versionId",
+      "displayOrder"
+    ]
+  ],
+  "collections": []
+}

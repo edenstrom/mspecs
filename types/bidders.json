@@ -1,0 +1,87 @@
+{
+  "name": "bidders",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "buyerId",
+      "type": "foreignKey",
+      "table": "buyers",
+      "mandatory": true
+    },
+    {
+      "name": "biddingId",
+      "type": "foreignKey",
+      "table": "biddings",
+      "mandatory": true
+    },
+    {
+      "name": "communicationTokenId",
+      "type": "foreignKey",
+      "table": "communicationTokens",
+      "mandatory": true,
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "createdByUserId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "sendInformationBySMS",
+      "type": "bit"
+    },
+    {
+      "name": "sendInformationByEmail",
+      "type": "bit"
+    },
+    {
+      "name": "sendInformationWebsite",
+      "type": "bit",
+      "note": "Depends on sendInformationByEmail"
+    },
+    {
+      "name": "allowBidsFromWebsite",
+      "type": "bit",
+      "note": "Depends on, sendInformationByEmail, sendInformationWebsite"
+    },
+    {
+      "name": "allowBidsFromSMS",
+      "type": "bit",
+      "note": "Depends on sendInformationBySMS"
+    },
+    {
+      "name": "acceptAutomaticBids",
+      "type": "bit"
+    },
+    {
+      "name": "bidThreshold",
+      "type": "money",
+      "note": "Used for automatic bids, if they are automatically accepted they need to be <= bidThreshold else they will be put i quarantine"
+    },
+    {
+      "name": "status",
+      "type": "enum",
+      "enums": [
+        "ENUMS_BIDDER_STATUS_ACTIVE",
+        "ENUMS_BIDDER_STATUS_DROPPED_OUT_WITH_INFORMATION",
+        "ENUMS_BIDDER_STATUS_DROPPED_OUT",
+        "ENUMS_BIDDER_STATUS_STOPPED_WITH_INFORMATION",
+        "ENUMS_BIDDER_STATUS_STOPPED"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

@@ -1,0 +1,56 @@
+{
+  "name": "searchFilters",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "filterType",
+      "type": "enum",
+      "enums": [
+        "contacts",
+        "externalContacts",
+        "deals",
+        "dealAssistants",
+        "housingAssociations",
+        "viewings",
+        "hdDeals"
+      ]
+    },
+    {
+      "name": "userAccountId",
+      "type": "foreignKey",
+      "table": "userAccounts",
+      "schema": "mspx_admin",
+      "mandatory": true
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 50,
+      "mandatory": true
+    },
+    {
+      "name": "jsonData",
+      "type": "jsonObject"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "createdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "isPrimary",
+      "type": "bit"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

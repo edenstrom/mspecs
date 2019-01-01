@@ -1,0 +1,245 @@
+{
+  "name": "organizationUnits",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "parentUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 60,
+      "mandatory": true
+    },
+    {
+      "name": "legalName",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "identifier",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "plusgiroNumber",
+      "type": "text",
+      "maxLength": 15
+    },
+    {
+      "name": "bankgiroNumber",
+      "type": "text",
+      "maxLength": 15
+    },
+    {
+      "name": "dueDays",
+      "type": "int",
+      "default": 30
+    },
+    {
+      "name": "invoiceNumber",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "invoiceNumberIncrement",
+      "type": "text",
+      "maxLength": 20,
+      "note": "Not in use!"
+    },
+    {
+      "name": "receiptNumber",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "invoiceAttention",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "invoiceStreetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "invoicePostalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "invoiceCity",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "invoiceEmail",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "isInvoiceUnit",
+      "type": "bit"
+    },
+    {
+      "name": "printCity",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "documentFooterLeft",
+      "type": "text"
+    },
+    {
+      "name": "documentFooterCenter",
+      "type": "text"
+    },
+    {
+      "name": "documentFooterRight",
+      "type": "text"
+    },
+    {
+      "name": "alias",
+      "type": "text",
+      "maxLength": 3
+    },
+    {
+      "name": "documentFooterUpperShowOrgAlias",
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowBrokerAlias",
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowPropertyName",
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowPropertyAddress",
+      "default": true,
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowDealToken",
+      "default": true,
+      "type": "bit"
+    },
+    {
+      "name": "documentFooterUpperShowArchiveNumber",
+      "type": "bit"
+    },
+    {
+      "name": "phoneNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "faxNumber",
+      "type": "text",
+      "maxLength": 25
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "vatPercentage",
+      "type": "percentage"
+    },
+    {
+      "name": "invoiceTermsOfPayment",
+      "type": "text"
+    },
+    {
+      "name": "printDocumentHeaderLogoFileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "streetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "postalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "archiveNumber",
+      "type": "text",
+      "maxLength": 40
+    },
+    {
+      "name": "fTaxVATDescription",
+      "type": "text"
+    },
+    {
+      "name": "defaultMapLatitude",
+      "type": "text",
+      "maxLength": 22
+    },
+    {
+      "name": "defaultMapLongitude",
+      "type": "text",
+      "maxLength": 22
+    },
+    {
+      "name": "customerNumber",
+      "type": "text",
+      "maxLength": 10,
+      "readOnly": true
+    },
+    {
+      "name": "envelopeType",
+      "type": "enum",
+      "enums": [
+        "ENUMS_ORGANIZATION_ENVELOPE_TYPE_V2",
+        "ENUMS_ORGANIZATION_ENVELOPE_TYPE_H2"
+      ]
+    },
+    {
+      "name": "leadForwardEmail",
+      "type": "text",
+      "maxLength": 80
+    },
+    {
+      "name": "businessInsideEUOutsideSweden",
+      "type": "bit"
+    },
+    {
+      "name": "businessOutsideEUOutsideSweden",
+      "type": "bit"
+    },
+    {
+      "name": "vatNumber",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "companyHeadquarters",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "staff",
+    "children"
+  ]
+}

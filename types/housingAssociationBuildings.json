@@ -1,0 +1,122 @@
+{
+  "name": "housingAssociationBuildings",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "housingAssociationId",
+      "type": "foreignKey",
+      "table": "housingAssociations"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "streetAddress",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "postalCode",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "city",
+      "type": "text",
+      "maxLength": 100
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "hasLiftSetting",
+      "type": "enum",
+      "enums": [
+        "ENUM_HAS_LIFT_SETTING_YES",
+        "ENUM_HAS_LIFT_SETTING_NO"
+      ]
+    },
+    {
+      "name": "heatAndAirConditionFacilityDescription",
+      "type": "text"
+    },
+    {
+      "name": "multimediaDescription",
+      "type": "text"
+    },
+    {
+      "name": "liftDescription",
+      "type": "text"
+    },
+    {
+      "name": "maxFloors",
+      "type": "int"
+    },
+    {
+      "name": "buildYear",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "energyClass",
+      "type": "enum",
+      "enums": [
+        "ENUMS_ENERGYCLASS_TYPE_A",
+        "ENUMS_ENERGYCLASS_TYPE_B",
+        "ENUMS_ENERGYCLASS_TYPE_C",
+        "ENUMS_ENERGYCLASS_TYPE_D",
+        "ENUMS_ENERGYCLASS_TYPE_E",
+        "ENUMS_ENERGYCLASS_TYPE_F",
+        "ENUMS_ENERGYCLASS_TYPE_G"
+      ]
+    },
+    {
+      "name": "energyPerformance",
+      "type": "int"
+    },
+    {
+      "name": "energyDescription",
+      "type": "text"
+    },
+    {
+      "name": "energyStatus",
+      "type": "enum",
+      "enums": [
+        "ENUMS_EnergyStatus_TYPE_ENERGY_USE_IS_NOT_NEEDED",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_USE_IS_MADE",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_USE_IN_PROGRESS",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_AUDITS_NOT_PERFORMED",
+        "ENUMS_EnergyStatus_TYPE_ENERGY_AUDITS_ARE_COMMISSIONED"
+      ]
+    },
+    {
+      "name": "energyStatusDate",
+      "type": "date"
+    },
+    {
+      "name": "energyStatusEntrepreneur",
+      "type": "text",
+      "maxLength": 60
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "doorCode",
+      "type": "text",
+      "maxLength": 16
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

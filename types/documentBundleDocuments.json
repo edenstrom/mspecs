@@ -1,0 +1,57 @@
+{
+  "name": "documentBundleDocuments",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "documentBundleId",
+      "type": "foreignKey",
+      "table": "documentBundles",
+      "mandatory": true
+    },
+    {
+      "name": "associationVersionId",
+      "type": "foreignKey",
+      "table": "associationVersions",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "associationDocumentId",
+      "type": "foreignKey",
+      "table": "associationDocuments",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "associationUrlId",
+      "type": "foreignKey",
+      "table": "associationUrls",
+      "schema": "mspx_admin"
+    },
+    {
+      "name": "fileId",
+      "type": "foreignKey",
+      "table": "files"
+    },
+    {
+      "name": "copies",
+      "type": "tinyint",
+      "mandatory": true,
+      "default": 1
+    },
+    {
+      "name": "allowSinglePrint",
+      "type": "bit"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

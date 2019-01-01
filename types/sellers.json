@@ -1,0 +1,64 @@
+{
+  "name": "sellers",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "dealId",
+      "type": "foreignKey",
+      "table": "deals",
+      "mandatory": true
+    },
+    {
+      "name": "share",
+      "type": "text",
+      "maxLength": 20
+    },
+    {
+      "name": "spouseConsentNeeded",
+      "type": "bit",
+      "isDeprecated": true,
+      "note": "is deprecated, should not be used!"
+    },
+    {
+      "name": "spouseConsentSignature",
+      "type": "text"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "sendBiddingInformationBySMS",
+      "type": "bit"
+    },
+    {
+      "name": "sendBiddingInformationByEmail",
+      "type": "bit"
+    },
+    {
+      "name": "shouldNotSign",
+      "type": "bit"
+    },
+    {
+      "name": "isDeceasedInheritor",
+      "type": "bit",
+      "note": "Dödsbodelägare"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": [
+    "signees"
+  ]
+}

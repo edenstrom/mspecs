@@ -1,0 +1,27 @@
+{
+  "name": "organizationalUnitGeographicalAreas",
+  "isConnectionTable": true,
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "organizationUnitId",
+      "type": "foreignKey",
+      "table": "organizationUnits",
+      "mandatory": true
+    },
+    {
+      "name": "geographicalAreaId",
+      "type": "foreignKey",
+      "table": "geographicalAreas",
+      "mandatory": true
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

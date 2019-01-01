@@ -1,0 +1,43 @@
+{
+  "name": "roomAppliances",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "applianceType",
+      "type": "text",
+      "maxLength": 30,
+      "table": "roomTypeAppliances",
+      "tableParameter": "roomTypeId"
+    },
+    {
+      "name": "manufacturer",
+      "type": "text",
+      "maxLength": 50,
+      "enum": [
+        "Bosch",
+        "Electro Helios",
+        "Electrolux",
+        "Gaggenau",
+        "Huskvarna",
+        "Miele"
+      ]
+    },
+    {
+      "name": "manufactured",
+      "type": "year"
+    },
+    {
+      "name": "roomId",
+      "type": "foreignKey",
+      "table": "rooms"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

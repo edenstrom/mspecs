@@ -1,0 +1,35 @@
+{
+  "name": "viewingContacts",
+  "isConnectionTable": true,
+  "isDeprecated": true,
+  "note": "This table is deprecated, use the new table viewingBuyers",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "viewingId",
+      "type": "foreignKey",
+      "table": "viewings",
+      "mandatory": true
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "isDeprecated": true,
+      "note": "is deprecated, use buyers.description instead"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

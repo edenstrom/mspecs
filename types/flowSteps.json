@@ -1,0 +1,46 @@
+{
+  "name": "flowSteps",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "conceptStateId",
+      "type": "foreignKey",
+      "table": "conceptStates"
+    },
+    {
+      "name": "nextFlowStepId",
+      "type": "foreignKey",
+      "table": "flowSteps"
+    },
+    {
+      "name": "flowTemplateId",
+      "type": "foreignKey",
+      "table": "flowTemplates"
+    },
+    {
+      "name": "isFinish",
+      "type": "bit"
+    },
+    {
+      "name": "displayOrder",
+      "type": "int"
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}

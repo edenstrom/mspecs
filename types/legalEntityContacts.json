@@ -1,0 +1,39 @@
+{
+  "name": "legalEntityContacts",
+  "publicFields": [
+    {
+      "name": "id",
+      "type": "primaryKey"
+    },
+    {
+      "name": "legalEntityContactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "contactId",
+      "type": "foreignKey",
+      "table": "contacts",
+      "mandatory": true
+    },
+    {
+      "name": "roleStartDate",
+      "type": "datetime"
+    },
+    {
+      "name": "other",
+      "type": "text"
+    },
+    {
+      "name": "role",
+      "type": "text",
+      "maxLength": 50
+    },
+    {
+      "name": "updatedDate",
+      "type": "updated"
+    }
+  ],
+  "collections": []
+}
