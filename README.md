@@ -27,6 +27,16 @@ const deals = await client.deals.all({
 });
 ```
 
+### Custom Fields
+
+Custom fields aren't fully typed right now. It's on the todo list to add some way to overload those definitions.
+
+```
+const deal = await client.deals.byId('M4341fdf53d..', { customFields: true });
+
+console.log(deal.customFieldValues)
+```
+
 ## Generating types
 
 TODO

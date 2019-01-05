@@ -18,6 +18,7 @@ export interface MspecsApiOptions<T> {
   sort?: string;
   collections?: string | T[];
   strip?: boolean;
+  customFields?: boolean;
 }
 
 export class MspecsBaseClient {

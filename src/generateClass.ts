@@ -87,6 +87,8 @@ ${str}`;
 
   const collections = getCollections(data, data.collections);
 
+  const customFields = `customFieldValues: { [key: string]: { name: string, value: string } | undefined } = {}`;
+
   const collectionTypes = `export type ${
     data.collectionName
   } = "${data.collections.join('" | "')}"`;
@@ -125,6 +127,8 @@ export class ${data.className} {
       ...collections
     };
   }
+
+  ${customFields}
 
   ${collections.value}
   
