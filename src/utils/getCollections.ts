@@ -26,10 +26,10 @@ ${tables.map(t => `   ${t.name}: [],`).join('\n')}
   create${capitalize(collection.singularName)}(${collection.singularName}: ${
         collection.interfaceName
       }): Promise<${collection.className}> {
-    const body = new ${collection.className}({
+    const body: ${collection.interfaceName} = {
       ${current.singularName}Id: this.id,
       ...${collection.singularName},
-    }, this.client);
+    };
 
     return this.client.${collection.name}.create(body);
   }`;
